@@ -5,11 +5,11 @@ const userController = {
   //get all users
   getAllUsers(req, res) {
       User.find({})
-          .populate({
-              path: 'thoughts',
-              //allows to remove __v from visuals
-              select: ('-__v')
-          })
+          // .populate({
+          //     path: 'story',
+          //     //allows to remove __v from visuals
+          //     select: ('-__v')
+          // })
           .populate({
               path: 'friends',
               select: ('-__v')
@@ -33,10 +33,10 @@ const userController = {
       User.findOne({
               _id: params.id
           })
-          .populate({
-              path: 'thoughts',
-              select: '-__v'
-          })
+          // .populate({
+          //     // path: 'story',
+          //     select: '-__v'
+          // })
           .select('-__v')
           .then(dbUserData => res.json(dbUserData))
           .catch(err => {
