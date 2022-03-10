@@ -4,6 +4,11 @@ module.exports = {
     getAllStories(req, res) {
         Story.find({})
         .populate('snippets')
+        .then(story => res.json(story))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        })
     },
     getSingleStory(req, res) {
         Story.findOne({ _id: req.params.storyId})
@@ -12,9 +17,9 @@ module.exports = {
         .then((story) => 
             !story
                 ? res.status(404).json({ message: 'No story with this ID found.'})
-                : res.json(user)
+                : res.json(story)
         )
-        .catch((err) => res.status.json(err));
+        .catch((err) => res.status(500).json(err));
             
     },
 
