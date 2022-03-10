@@ -1,6 +1,9 @@
 const { Schema, model } = require('mongoose');
 
 const storySchema = new Schema({
+    storyname: {
+        type: String,
+    },
     username: [{
         type: Schema.Types.ObjectId,
         ref: 'Users'
