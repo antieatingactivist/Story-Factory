@@ -3,7 +3,7 @@ const { Schema, model } = require('mongoose');
 const storySchema = new Schema({
     username: [{
         type: Schema.Types.ObjectId,
-        ref: User
+        ref: 'Users'
     }],
 
     snippets: [{
