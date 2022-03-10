@@ -1,9 +1,27 @@
 const { Schema, model } = require('mongoose');
 
-const storySchema = new Schema(
+const storySchema = new Schema({
+    username: [{
+        type: Schema.Types.ObjectId,
+        ref: User
+    }],
+
+    snippets: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Snippet'
+    }]
 
     
-);
+}, {
+    toJSON: {
+        getters: true,
+    },
+    id: false
+});
+
+storySchema.virtual('snippetCount').get(function () {
+    return this.snippets.length;
+});
 
 
 const Story = model('story', storySchema);
