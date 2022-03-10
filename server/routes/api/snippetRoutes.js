@@ -4,8 +4,8 @@ const {
   getAllSnippets,
   getSnippetById,
   addSnippet,
-  addReaction,
-  removeReaction,
+//   addReaction,
+//   removeReaction,
 } = require('../../controllers/snippetController');
 
 // /api/thoughts
@@ -18,12 +18,12 @@ router
   .route('/:snippetId')
   .get(getSnippetById)
 
-router
-  .route('/:snippetId/reactions')
-  .post(addReaction);
+// router
+//   .route('/:snippetId/reactions')
+//   .post(addReaction);
 
-router
-  .route('/:snippetId/reactions/:reactionId')
-  .delete(removeReaction);
+// router
+//   .route('/:snippetId/reactions/:reactionId')
+//   .delete(removeReaction);
 
 module.exports = router;

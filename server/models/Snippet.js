@@ -8,18 +8,18 @@ const SnippetSchema = new Schema({
     },
 
     username: {
-        type: Schema.Types.ObjectId,
+        type: String,
         ref: 'User',
         required: true,
 
     },
     
-    storyname: {
-        type: Schema.Types.ObjectId,
-        ref: 'Story',
-        required: true,
+    // storyname: {
+    //     type: Schema.Types.ObjectId,
+    //     ref: 'Story',
+    //     required: true,
 
-    },
+    // },
     // reactions: [reactionSchema]
 });
 
