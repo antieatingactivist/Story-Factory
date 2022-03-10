@@ -1,23 +1,24 @@
 
 import Nav from './Nav';
 
+const headerStyle = {
+    paddingTop: "10px",
+    display: "flex",
+    width: "100%",
+    fontFamily: "American Typewriter",
+}
+const titleStyle = {
+        
+    fontSize: "4em",
+    paddingLeft: "30px",
+    // backgroundColor: "#000000",
+    whiteSpace: "nowrap"
+        
+}
 
 export default function Header({hidden, scrollPosition}) {
 
-    const headerStyle = {
-        paddingTop: "10px",
-        display: "flex",
-        width: "100%",
-        fontFamily: "American Typewriter",
-    }
-    const titleStyle = {
-        
-        fontSize: "4em",
-        paddingLeft: "30px",
-        // backgroundColor: "#000000",
-        whiteSpace: "nowrap"
-        
-    }
+ 
 
 
     return (

@@ -1,22 +1,22 @@
 
+const navStyle = {
+    paddingTop: "10px",
+    display: "flex",
+    justifyContent: "flex-end", 
+    // backgroundColor: "#222222",
+    fontSize: "1.4em",
+    width: "100%",
+       
+}
+
+const aStyle = {
+    padding: "10px",
+}
 
 
 
 export default function Nav() {
 
-    const navStyle = {
-        paddingTop: "10px",
-        display: "flex",
-        justifyContent: "flex-end", 
-        // backgroundColor: "#222222",
-        fontSize: "1.4em",
-        width: "100%",
-       
-    }
-
-    const aStyle = {
-        padding: "10px",
-    }
 
 
     return (
