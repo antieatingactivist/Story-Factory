@@ -2,7 +2,7 @@ const {
     Schema,
     model
 } = require('mongoose');
-const moment = require('moment');
+
 
 const UserSchema = new Schema({
     username: {
@@ -22,6 +22,10 @@ const UserSchema = new Schema({
             message: props => `${props.value} is not a valid email address!`
         },
     },
+    Snippet: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Snippet'
+    }],
     friends: [{
         type: Schema.Types.ObjectId,
         ref: 'User'
