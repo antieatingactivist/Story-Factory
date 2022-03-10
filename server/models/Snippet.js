@@ -1,7 +1,7 @@
 const { Schema, model } = require('mongoose');
 
-const snippetSchema = new Schema({
-    content: {
+const SnippetSchema = new Schema({
+    snippetText: {
         type: String,
         required: true,
 
@@ -13,16 +13,17 @@ const snippetSchema = new Schema({
         required: true,
 
     },
-
+    
     storyname: {
         type: Schema.Types.ObjectId,
         ref: 'Story',
         required: true,
 
     },
+    // reactions: [reactionSchema]
 });
 
 
-const Snippet = model('snippet', snippetSchema);
+const Snippet = model('Snippet', SnippetSchema);
 
 module.exports = Snippet;
