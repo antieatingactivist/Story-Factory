@@ -1,8 +1,9 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    sans-serif; */
+  font-family: 'Typewriter';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #111017;
@@ -18,4 +19,10 @@ code {
 a {
   text-decoration: none;
   color: #FFFFFF;
+}
+
+@font-face {
+  font-family: 'Typewriter';
+  src: url(./assets/fonts/American\ Typewriter\ Regular.ttf);
+
 }

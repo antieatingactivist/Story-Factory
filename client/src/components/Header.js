@@ -1,11 +1,11 @@
-
+// import '../index.css';
 import Nav from './Nav';
 
 const headerStyle = {
     paddingTop: "10px",
     display: "flex",
     width: "100%",
-    fontFamily: "American Typewriter",
+    // fontFamily: "Typewriter",
 }
 const titleStyle = {
         
