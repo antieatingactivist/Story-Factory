@@ -1,5 +1,5 @@
 const {User} = require('../models');
-
+const bcrypt = require('bcryptjs')
 const userController = {
 
   //get all users
@@ -192,5 +192,32 @@ const userController = {
           .catch(err => res.json(err));
   },
 };
+// var testUser = new User({
+//     username: 'jmar777',
+//     password: 'Password123',
+//     email: 'jmar777@gmail.com'
+// });
+     
+// // save the user to database
+// testUser.save(function(err) {
+//     if (err) throw err;
+// });
+    
+// // fetch the user and test password verification
+// User.findOne({ username: 'jmar777' }, function(err, user) {
+//     if (err) throw err;
+     
+//     // test a matching password
+//     user.comparePassword('Password123', function(err, isMatch) {
+//         if (err) throw err;
+//         console.log('Password123:', isMatch); // -&gt; Password123: true
+//     });
+     
+//     // test a failing password
+//     user.comparePassword('123Password', function(err, isMatch) {
+//         if (err) throw err;
+//         console.log('123Password:', isMatch); // -&gt; 123Password: false
+//     });
+// });
 
 module.exports = userController;
