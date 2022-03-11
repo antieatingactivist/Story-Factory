@@ -1,8 +1,5 @@
 // import '../index.css';
 import Nav from './Nav';
-import { StoryContext } from '../App';
-import { useContext } from 'react';
-
 
 const headerStyle = {
     paddingTop: "10px",
@@ -21,12 +18,12 @@ const titleStyle = {
 
 export default function Header() {
 
-    const storyShow = useContext(StoryContext);
+ 
 
 
     return (
         <header style={headerStyle}>
-            <div style={titleStyle} onClick={() => storyShow.setStoryShow({homeShow: false})}>Story Factory</div>
+            <div style={titleStyle}>Story Factory</div>
             <Nav />
       
         </header>

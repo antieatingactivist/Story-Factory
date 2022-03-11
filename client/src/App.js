@@ -3,22 +3,14 @@ import './App.css';
 import Header from './components/Header';
 import Story from './components/Story';
 import Login from './components/Login';
-import Home from './components/Home';
 // import UserProvider from './utils/UserContext';
 import { createContext, useContext, useState } from 'react';
 
-
-export const StoryContext = createContext();
-
+export const LoginContext = createContext();
 // export const myState = () => useContext(LoginContext)
 
 function App() {
-  const [storyShow, setStoryShow] = useState({
-    
-    loginShow: false,
-    homeShow: false
-  });
-
+  const [loginShow, setLoginShow] = useState(false);
 
   const appStyle = {
     display: 'flex',
@@ -28,15 +20,14 @@ function App() {
   return (
     <div style={appStyle} className="App">
       
-      <StoryContext.Provider value={ {storyShow, setStoryShow} }>
+      <LoginContext.Provider value={ {loginShow, setLoginShow} }>
         <Header />
-    
-     
-        {storyShow.homeShow ? <Home /> : <Story />}
+        <Story />
+
       
-        {storyShow.loginShow ? <Login /> : <></>}
-     
-      </StoryContext.Provider>
+        {loginShow ? <Login /> : <></>}
+        {/* <Login /> */}
+      </LoginContext.Provider>
 
     </div>
   );
