@@ -16,7 +16,7 @@ const titleStyle = {
         
 }
 
-export default function Header({hidden, scrollPosition}) {
+export default function Header() {
 
  
 

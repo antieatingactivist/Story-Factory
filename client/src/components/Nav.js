@@ -1,3 +1,5 @@
+import { LoginContext } from '../App';
+import { useContext } from 'react';
 
 const navStyle = {
     paddingTop: "10px",
@@ -16,7 +18,7 @@ const aStyle = {
 
 
 export default function Nav() {
-
+    const loginShow = useContext(LoginContext);
 
 
     return (
@@ -25,7 +27,7 @@ export default function Nav() {
             
             <a style={aStyle} href="#">Other Link</a>
             <a style={aStyle} href="#">Home</a>
-            <a style={aStyle} href="#">Login</a>
+            <a style={aStyle} href="#" onClick={() => loginShow.setLoginShow(true)} >Login</a>
       
         </nav>
     );
