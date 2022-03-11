@@ -21,6 +21,29 @@ a {
   color: #FFFFFF;
 }
 
+button {
+  font-family: inherit;
+  background-color: #aaaaaa00;
+  border: 1px solid #ffffff;
+  color: #FFFFFF;
+  font-size: 1em;
+
+}
+
+input {
+  font-family: inherit;
+  background-color: #aaaaaa00;
+  border: 1px solid #ffffff;
+  font-size: 1em;
+  color: #FFFFFF;
+}
+
+input::placeholder {
+  color: #333333;
+}
+
+
+
 @font-face {
   font-family: 'Typewriter';
   src: url(./assets/fonts/American\ Typewriter\ Regular.ttf);
