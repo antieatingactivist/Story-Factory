@@ -1,4 +1,4 @@
-import { LoginContext } from '../App';
+import { StoryContext } from '../App';
 import { useContext } from 'react';
 
 const navStyle = {
@@ -18,7 +18,7 @@ const aStyle = {
 
 
 export default function Nav() {
-    const loginShow = useContext(LoginContext);
+    const storyShow = useContext(StoryContext);
 
 
     return (
@@ -26,8 +26,8 @@ export default function Nav() {
 
             
             <a style={aStyle} href="#">Other Link</a>
-            <a style={aStyle} href="#">Home</a>
-            <a style={aStyle} href="#" onClick={() => loginShow.setLoginShow(true)} >Login</a>
+            <a style={aStyle} href="#" onClick={() => storyShow.setStoryShow({homeShow: true})} >Home</a>
+            <a style={aStyle} href="#" onClick={() => storyShow.setStoryShow({loginShow: true})} >Login</a>
       
         </nav>
     );

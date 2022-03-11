@@ -1,15 +1,15 @@
 import React, { useContext, useState } from 'react';
-import { LoginContext } from '../App';
+import { StoryContext } from '../App';
 
 
 
 
 export default function Login() {
 
-    const loginShow = useContext(LoginContext);
+    const storyShow = useContext(StoryContext);
 
     
-    console.log(loginShow.loginShow);
+    console.log(storyShow.loginShow);
 
     const [loginUserName, setLoginUserName] = useState('');
     const [loginPassword, setLoginPassword] = useState('');
@@ -85,7 +85,7 @@ export default function Login() {
         // alert(`Hello ${userName}`);
         setLoginUserName('');
         setLoginPassword('');
-        loginShow.setLoginShow(false);
+        storyShow.setStoryShow({loginShow: false});
     };
 
     const handleSignupSubmit = (e) => {
@@ -97,7 +97,7 @@ export default function Login() {
         setSignupUserName('');
         setSignupPassword('');
         setEmail('');
-        loginShow.setLoginShow(false);
+        storyShow.setStoryShow({loginShow: false});
     };
 
 
