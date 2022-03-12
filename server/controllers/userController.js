@@ -1,5 +1,5 @@
 const {User} = require('../models');
-
+const bcrypt = require('bcryptjs')
 const userController = {
 
   //get all users
