@@ -82,8 +82,8 @@ export default function Home() {
             <div style={divStyle}>
                 <h2>Contributions</h2>
                 {tempData.map((snippet, index) => (
-                    <div >
-                    <Snippet  story={"default story"} text={snippet.text} color={textColors[index]} key={snippet.id}/>
+                    <div key={index}>
+                    <Snippet  story={"default story"} text={snippet.text} color={textColors[index]} />
                     </div>
 
                  ))}

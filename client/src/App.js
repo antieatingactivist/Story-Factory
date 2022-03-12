@@ -4,39 +4,41 @@ import Header from './components/Header';
 import Story from './components/Story';
 import Login from './components/Login';
 import Home from './components/Home';
-// import UserProvider from './utils/UserContext';
 import { createContext, useContext, useState } from 'react';
 
 
-export const StoryContext = createContext();
+export const GlobalContext = createContext();
 
-// export const myState = () => useContext(LoginContext)
 
 function App() {
-  const [storyShow, setStoryShow] = useState({
+
+  //these are the global variables that can be accessed throughout the app.
+  const [globalState, setGlobalState] = useState({
     
     loginShow: false,
     homeShow: false
   });
-
+  //these are logged to the console
+  console.log(globalState);
 
   const appStyle = {
     display: 'flex',
     flexDirection: 'column',
     
   }
+  
   return (
     <div style={appStyle} className="App">
       
-      <StoryContext.Provider value={ {storyShow, setStoryShow} }>
+      <GlobalContext.Provider value={ {globalState, setGlobalState} }>
         <Header />
     
      
-        {storyShow.homeShow ? <Home /> : <Story />}
+        {globalState.homeShow ? <Home /> : <Story />}
       
-        {storyShow.loginShow ? <Login /> : <></>}
+        {globalState.loginShow ? <Login /> : <></>}
      
-      </StoryContext.Provider>
+      </GlobalContext.Provider>
 
     </div>
   );
