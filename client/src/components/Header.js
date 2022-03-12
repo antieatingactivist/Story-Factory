@@ -1,6 +1,6 @@
 // import '../index.css';
 import Nav from './Nav';
-import { StoryContext } from '../App';
+import { GlobalContext } from '../App';
 import { useContext } from 'react';
 
 
@@ -21,12 +21,12 @@ const titleStyle = {
 
 export default function Header() {
 
-    const storyShow = useContext(StoryContext);
+    const globalState = useContext(GlobalContext);
 
 
     return (
         <header style={headerStyle}>
-            <div style={titleStyle} onClick={() => storyShow.setStoryShow({homeShow: false})}>Story Factory</div>
+            <div style={titleStyle} onClick={() => globalState.setGlobalState((prevState) => ({...prevState, homeShow: false}))}>Story Factory</div>
             <Nav />
       
         </header>
