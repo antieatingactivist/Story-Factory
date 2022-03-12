@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Story from './components/Story';
 import Login from './components/Login';
 import Home from './components/Home';
+import Create from './components/Create';
 // import UserProvider from './utils/UserContext';
 import { createContext, useContext, useState } from 'react';
 
@@ -31,8 +32,8 @@ function App() {
       <StoryContext.Provider value={ {storyShow, setStoryShow} }>
         <Header />
     
-     
-        {storyShow.homeShow ? <Home /> : <Story />}
+        <Create />
+        {/* {storyShow.homeShow ? <Home /> : <Story />} */}
       
         {storyShow.loginShow ? <Login /> : <></>}
      
