@@ -2,7 +2,9 @@ import Prompt from './create-components/Prompt';
 import Rules from './create-components/Rules';
 import Confirm from './create-components/Confirm';
 import LastSnippet from './create-components/LastSnippet';
-import { useState, useEffect } from 'react';
+import TextField from './create-components/TextField';
+
+import { useState } from 'react';
 
 
 
@@ -25,9 +27,19 @@ const divStyle = {
 export default function Create() {
     const [showPassage, setShowPassage] = useState(false);
     const [passageTimer, setPassageTimer] = useState(0);
-    const [intervalId, setIntervalId] = useState(0);
+    const [writingTimer, setWritingTimer] = useState(0);
+    const [passageIntervalId, setPassageIntervalId] = useState(0);
+    const [writingIntervalId, setWritingIntervalId] = useState(0);
 
-
+    const startWriting = () => {
+        setWritingTimer(20);
+        const timer = setInterval(()=>{
+            setWritingTimer(timer => timer-1);
+            
+            
+        },1000);
+        setWritingIntervalId(timer);
+    }
     const startGame = () => {
         setShowPassage(true);
         setPassageTimer(20);
@@ -36,14 +48,17 @@ export default function Create() {
             
             
         },1000);
-        setIntervalId(timer);
+        setPassageIntervalId(timer);
     }
 
-    if (intervalId && passageTimer <= 0) {
-        clearInterval(intervalId);
+    if (passageIntervalId && passageTimer <= 0) {
+        clearInterval(passageIntervalId);
+    }
+    if (writingIntervalId && writingTimer <= 0) {
+        clearInterval(writingIntervalId);
     }
 
-    console.log('showPassage', showPassage);
+    console.log(writingTimer);
     return (
         <section style={createStyle}>
             <h1>Are You Ready? Here is your Prompt</h1>
@@ -67,8 +82,18 @@ export default function Create() {
                             <p>{passageTimer}</p> 
                         </div>
                         :
-                        <></>
-                        
+                        <div>
+                        {!writingTimer ?
+                        <div>
+                            <button onClick={startWriting}>Ready?</button>
+                            
+                        </div>
+                        :   <div>
+                                {writingTimer}
+                                <TextField />
+                            </div>
+                        }
+                        </div>
                     }
 
                 </div>
