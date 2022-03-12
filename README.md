@@ -7,8 +7,13 @@ Do you enjoy writing and playing time attack games? Then welcome to Story-Factor
 
 * [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
 * [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
-* [skeleton CSS](http://getskeleton.com/)
 * [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+* [ReactJS](https://reactjs.org/)
+* [NodeJS](https://nodejs.org/en/)
+* [Bcrypt](https://nodejs.org/en/)
+* [Mongoose](https://mongoosejs.com/docs/)
+* [MongoDB](https://www.mongodb.com/)
+* [Nodemon](https://nodemon.io/)
 
 ## Deployed Link
 
