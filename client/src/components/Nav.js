@@ -1,4 +1,4 @@
-import { StoryContext } from '../App';
+import { GlobalContext } from '../App';
 import { useContext } from 'react';
 
 const navStyle = {
@@ -18,16 +18,16 @@ const aStyle = {
 
 
 export default function Nav() {
-    const storyShow = useContext(StoryContext);
+    const globalState = useContext(GlobalContext);
 
 
     return (
         <nav style={navStyle}>
 
             
-            <a style={aStyle} href="#">Other Link</a>
-            <a style={aStyle} href="#" onClick={() => storyShow.setStoryShow({homeShow: true})} >Home</a>
-            <a style={aStyle} href="#" onClick={() => storyShow.setStoryShow({loginShow: true})} >Login</a>
+            <a style={aStyle} href="#f">Other Link</a>
+            <a style={aStyle} href="#f" onClick={() => globalState.setGlobalState((prevState) => ({...prevState, homeShow: true}))} >Home</a>
+            <a style={aStyle} href="#f" onClick={() => globalState.setGlobalState((prevState) => ({...prevState, loginShow: true}))} >Login</a>
       
         </nav>
     );
