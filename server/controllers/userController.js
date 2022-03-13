@@ -1,5 +1,7 @@
 const {User} = require('../models');
 const bcrypt = require('bcryptjs')
+const { signToken } = require('../utils/auth');
+
 const userController = {
 
   //get all users
@@ -53,6 +55,23 @@ const userController = {
           .then(dbUserData => res.json(dbUserData))
           .catch(err => res.status(400).json(err));
   },
+
+  //loginUser
+  async loginUser({body}, res) {
+      const user = await User.findOne({ $or: [{ username: body.username}, {email: body.email}] });
+      if (!user) {
+          return res.status(400).json({message: "Can't find user with this email and/or password."});
+      };
+      
+      const cPassword = await user.comparePasword(body.password);
+
+      if(!cPassword) {
+          return res.status(400).json({ message: 'Incorrect Password'});
+      };
+      const token = signToken(user);
+
+      res.json({ token, user });
+    },
 
   //update user by id
   updateUser({
