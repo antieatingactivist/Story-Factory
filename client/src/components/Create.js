@@ -33,6 +33,7 @@ export default function Create() {
     const [passageIntervalId, setPassageIntervalId] = useState(0);
     const [writingIntervalId, setWritingIntervalId] = useState(0);
     const [timesUp, setTimesUp] = useState(false)
+    const [timedWordTotal, setTimedWordTotal] = useState(0);
    
     console.log(textFieldContents);
     const startWriting = () => {
@@ -61,6 +62,7 @@ export default function Create() {
     if (writingIntervalId && !writingTimer && !timesUp) {
         clearInterval(writingIntervalId);
         setTimesUp(true);
+        setTimedWordTotal(textFieldContents.trim().split(/\s+/).length);
     }
 
  
@@ -96,7 +98,11 @@ export default function Create() {
                                 <div>
                                     {!timesUp ? 
                                         <button onClick={startWriting}>Ready?</button>
-                                        : <TextField />
+                                        : 
+                                        <div>
+                                            You wrote {timedWordTotal} words. You may now proofread your snippet, but you can only add or subtract 5 words.
+                                            <TextField />
+                                        </div>
                                     }
                                 </div>
                                 
