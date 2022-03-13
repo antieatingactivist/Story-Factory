@@ -1,7 +1,21 @@
+import { useState, useContext } from 'react';
+import { CreateContext } from '../Create';
 
 
+export default function TextField({text}) {
+    
+    const textFieldContents = useContext(CreateContext);
 
-export default function TextField() {
+    const handleInputChange = (e) => {
+        // Getting the value and name of the input which triggered the change
+        e.preventDefault();
+        const { value } = e.target;
+        console.log(value);
+        textFieldContents.setTextFieldContents(value);
+
+        // return setTextField(value)
+    
+    };
 
     const textareaStyle = {
         width: '100%',
@@ -11,13 +25,15 @@ export default function TextField() {
         font: 'inherit',
         color: '#ffffff',
     }
+    
     return (
+        
         <section>
          
 
         
             <form>
-                <textarea style={textareaStyle} name="textBox"></textarea>
+                <textarea onChange={handleInputChange} style={textareaStyle} name="textBox" defaultValue={textFieldContents.textFieldContents}></textarea>
 
             </form>
 
