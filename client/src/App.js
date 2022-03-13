@@ -33,7 +33,7 @@ function App() {
         <Header />
     
         <Create />
-        {/* {storyShow.homeShow ? <Home /> : <Story />} */}
+        {storyShow.homeShow ? <Home /> : <Story />}
       
         {storyShow.loginShow ? <Login /> : <></>}
      
