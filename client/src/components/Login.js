@@ -1,15 +1,15 @@
 import React, { useContext, useState } from 'react';
-import { StoryContext } from '../App';
+import { GlobalContext } from '../App';
 
 
 
 
 export default function Login() {
 
-    const storyShow = useContext(StoryContext);
+    const globalState = useContext(GlobalContext);
 
     
-    console.log(storyShow.loginShow);
+    // console.log(storyShow.loginShow);
 
     const [loginUserName, setLoginUserName] = useState('');
     const [loginPassword, setLoginPassword] = useState('');
@@ -84,7 +84,7 @@ export default function Login() {
         // alert(`Hello ${userName}`);
         setLoginUserName('');
         setLoginPassword('');
-        storyShow.setStoryShow({loginShow: false});
+        globalState.setGlobalState((prevState) => ({...prevState, loginShow: false}));
     };
 
     const handleSignupSubmit = (e) => {
@@ -96,7 +96,7 @@ export default function Login() {
         setSignupUserName('');
         setSignupPassword('');
         setEmail('');
-        storyShow.setStoryShow({loginShow: false});
+        globalState.setGlobalState((prevState) => ({...prevState, loginShow: false}));
     };
 
 
