@@ -66,7 +66,7 @@ export default function Create() {
     }
 
  
-
+    const wordCountDifference = textFieldContents.trim().split(/\s+/).length - timedWordTotal;
     // console.log(timesUp);
     return (
         <CreateContext.Provider value={ {textFieldContents, setTextFieldContents} }>
@@ -102,6 +102,36 @@ export default function Create() {
                                         <div>
                                             You wrote {timedWordTotal} words. You may now proofread your snippet, but you can only add or subtract 5 words.
                                             <TextField />
+                                            { wordCountDifference }
+                                            { Math.abs(wordCountDifference) <= 5 ?
+                                                <button>All Done!</button> 
+                                                :
+                                                <div>
+                                                    { wordCountDifference > 5 ?
+                                                        <div>
+                                                            { wordCountDifference > 6 ?
+                                                                <button>Too Many Words! (delete {wordCountDifference - 5} words)</button>
+                                                            : 
+                                                                <button>Too Many Words! (delete {wordCountDifference - 5} word)</button>
+                                                            }
+                                                        </div>
+                                                        
+                                                        :
+                                                        <div>
+                                                            { Math.abs(wordCountDifference) > 6 ?
+                                                                <button>Too Few Words! (add {Math.abs(wordCountDifference + 5)} words)</button>
+                                                            : 
+                                                                <button>Too Few Words! (add {Math.abs(wordCountDifference + 5)} word)</button>
+                                                            }
+                                                        </div>
+
+                                                       
+                                                    
+                                                    }
+                                                </div>
+                                                
+                                            }
+                                            
                                         </div>
                                     }
                                 </div>
