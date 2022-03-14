@@ -27,8 +27,8 @@ export default function Login() {
         border: "1px solid #ffffff",
 
         backgroundColor: '#000000bb',
-        WebkitBackdropFilter: 'blur(4px)',
-        BackdropFilter: 'blur(4px)',
+        WebkitBackdropFilter: 'blur(6px)',
+        backdropFilter: 'blur(6px)',
         height: '300px',
         width: '80vw',
         padding: '20px',
