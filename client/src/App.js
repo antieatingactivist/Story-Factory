@@ -34,6 +34,11 @@ function App() {
       <ParticleBackground/>
       <GlobalContext.Provider value={ {globalState, setGlobalState} }>
         <Header />
+<<<<<<< HEAD
+=======
+    
+        {/* <Create /> */}
+>>>>>>> d2502b8ef17f428de997706de4e3e8456889b092
         
         {globalState.homeShow ? <Home /> : <Story />}
 
