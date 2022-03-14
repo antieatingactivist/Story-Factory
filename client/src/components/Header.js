@@ -31,9 +31,7 @@ export default function Header() {
                     onInit={(typewriter) => {
                         typewriter.typeString('Story Factory')
                         .start();
-                    }}
-                 />
-
+                    }}/>
             </div>
             <Nav />
       
