@@ -93,16 +93,11 @@ export default function Home() {
     // console.log(createStart)
     return (
         <section style={homeStyle}>
-<<<<<<< HEAD
-            <h1>Welcome back, [User]!</h1>
-            <h1>Featured Story</h1>
-=======
             
             {createStart ? 
                 <Create /> 
                 
                 :
->>>>>>> d2502b8ef17f428de997706de4e3e8456889b092
 
                 <div>
                     <h1>Welcome back [User]</h1>
