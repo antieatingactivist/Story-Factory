@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { GlobalContext } from '../App';
-import { createUser } from '../utils/api';
+import { createUser } from '../utils/API';
 
 
 
