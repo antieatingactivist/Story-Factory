@@ -12,10 +12,10 @@ export const CreateContext = createContext();
 
 const createStyle = {
 
- width: '80%',
+//  width: '80%',
 //  backgroundColor: '#222222',
- marginLeft: '10%',
- marginTop: '3%',
+//  marginLeft: '10%',
+//  marginTop: '3%',
 }
 
 const divStyle = {
