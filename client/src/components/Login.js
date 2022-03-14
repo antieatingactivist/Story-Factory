@@ -77,14 +77,30 @@ export default function Login() {
     
     };
 
-    const handleLoginSubmit = (e) => {
+    const handleLoginSubmit = async (event) => {
         // Preventing the default behavior of the form submit (which is to refresh the page)
-        e.preventDefault();
+        event.preventDefault();
 
         const username = loginUserName;
         const password = loginPassword;
 
-        loginUser({ username, password });
+        const data = { username, password }
+
+        try { 
+            const response = await loginUser(data);
+
+            if (!response.ok) {
+                throw new Error('BORKED')
+            }
+
+            const {token, user } = await response.json();
+            console.log(user);
+            Auth.login(token);
+        } catch(error) {
+            console.error(error)
+        }
+
+        
     
         // Alert the user their first and last name, clear the inputs
         // alert(`Hello ${userName}`);
