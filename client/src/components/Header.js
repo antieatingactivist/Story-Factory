@@ -30,9 +30,6 @@ export default function Header() {
                 <Typewriter
                     onInit={(typewriter) => {
                         typewriter.typeString('Story Factory')
-                        .callFunction(() => {
-                            console.log('String typed out!');
-                        })
                         .start();
                     }}
                  />
