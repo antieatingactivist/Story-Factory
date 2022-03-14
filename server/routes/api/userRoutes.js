@@ -12,10 +12,11 @@ const {
 } = require('../../controllers/userController');
 
 // Set up GET all and POST at /api/users. Provide name of controller as callback
+router.route('/').get(getAllUsers).post(createUser);
+
+
 router
-  .route('/')
-  .get(getAllUsers)
-  .post(createUser)
+  .route('/login')
   .post(loginUser);
 
 // Set up GET one, PUT, and DELETE at /api/users/<id>

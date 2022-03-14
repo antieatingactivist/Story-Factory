@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { GlobalContext } from '../App';
 import { createUser, loginUser } from '../utils/API';
-
+import Auth from '../utils/auth';
 
 
 
@@ -84,7 +84,7 @@ export default function Login() {
         const username = loginUserName;
         const password = loginPassword;
 
-        loginUser([username, password]);
+        loginUser({ username, password });
     
         // Alert the user their first and last name, clear the inputs
         // alert(`Hello ${userName}`);
@@ -93,16 +93,30 @@ export default function Login() {
         globalState.setGlobalState((prevState) => ({...prevState, loginShow: false}));
     };
 
-    const handleSignupSubmit = (e) => {
+    const handleSignupSubmit = async (event) => {
         // Preventing the default behavior of the form submit (which is to refresh the page)
-        e.preventDefault();
+        event.preventDefault();
         
         const username = signupUserName;
         const password = signupPassword;
 
-        console.log([username, password, email]);
+        const data =  { username, email, password }
+        try {
+            const response = await createUser(data);
+            
+            if (!response.ok) {
+                throw new Error('Error occurred!');
+            }
 
-        createUser([username, password, email]);
+            console.log(response)
+            
+            const { token, user } = await response.json();
+            console.log(user);
+            Auth.login(token);
+        } catch (error) {
+            console.log(error);
+            
+        }
 
         // Alert the user their first and last name, clear the inputs
         // alert(`Hello ${userName}`);
