@@ -25,7 +25,7 @@ const particleBackground =() =>{
                         area: 1200
                         },
                         limit: 0,
-                        value: 200,
+                        value: 400,
                     },
                     opacity:{
                         animation:{
