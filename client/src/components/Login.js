@@ -93,9 +93,9 @@ export default function Login() {
         globalState.setGlobalState((prevState) => ({...prevState, loginShow: false}));
     };
 
-    const handleSignupSubmit = async (e) => {
+    const handleSignupSubmit = async (event) => {
         // Preventing the default behavior of the form submit (which is to refresh the page)
-        e.preventDefault();
+        event.preventDefault();
         
         const username = signupUserName;
         const password = signupPassword;
