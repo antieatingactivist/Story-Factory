@@ -20,11 +20,13 @@ const particleBackground =() =>{
                         value: 'B43B20',
                     },
                     number: {
-                        density: true,
+                        density:{ 
+                        enable: true,
                         area: 1200
+                        },
+                        limit: 0,
+                        value: 400,
                     },
-                    limit: 0,
-                    value: 400,
                 }
             }}/>
         </div>
