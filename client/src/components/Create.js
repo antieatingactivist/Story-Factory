@@ -3,6 +3,7 @@ import Rules from './create-components/Rules';
 // import Confirm from './create-components/Confirm';
 import LastSnippet from './create-components/LastSnippet';
 import TextField from './create-components/TextField';
+import Stats from './create-components/Stats';
 
 import { useState, createContext } from 'react';
 
@@ -20,6 +21,24 @@ const createStyle = {
 const divStyle = {
     border: '1px solid #ffffff',
     padding: '20px',
+}
+const buttonStyle = {
+    fontSize: '1.4em',
+    marginRight: '20px',
+}
+const disabledButtonStyle = {
+    fontSize: '1.4em',
+    color: "#ef4444",
+    borderColor: "#ef4444",
+    marginRight: '20px',
+}
+const displayInline = {
+    display: 'flex'
+}
+
+const timerStyle = {
+    color: "#ef4444",
+    fontSize: '2em',
 }
 
 
@@ -47,7 +66,7 @@ export default function Create() {
     }
     const startGame = () => {
         setShowPassage(true);
-        setPassageTimer(2);
+        setPassageTimer(12);
         const timer = setInterval(()=>{
             setPassageTimer(timer => timer-1);
             
@@ -67,7 +86,7 @@ export default function Create() {
 
  
     const wordCountDifference = textFieldContents.trim().split(/\s+/).length - timedWordTotal;
-    // console.log(timesUp);
+
     return (
         <CreateContext.Provider value={ {textFieldContents, setTextFieldContents} }>
         <section style={createStyle}>
@@ -79,17 +98,18 @@ export default function Create() {
 
                 {!showPassage ?
                 <div>
+                    <Stats />
                     <Rules />
                 
-                    <button onClick={startGame}>I want to write about this!</button>
-                    <button>Try a different prompt</button>
+                    <button style={buttonStyle} onClick={startGame}>I want to write about this!</button>
+                    <button style={buttonStyle}>Try a different prompt</button>
                 </div> :
                 <div>
                     
                     {passageTimer ?
                         <div>
                             <LastSnippet />
-                            <p>{passageTimer}</p> 
+                            <p style={timerStyle}>{passageTimer} seconds left</p> 
                         </div>
                         :
                         <div>
@@ -97,37 +117,44 @@ export default function Create() {
                             
                                 <div>
                                     {!timesUp ? 
-                                        <button onClick={startWriting}>Ready?</button>
+                                        <div>
+                                            <button style={buttonStyle} onClick={startWriting}>Ready?</button>
+                                            <button style={buttonStyle}>Start Over with a New Prompt</button>
+                                        </div>
                                         : 
                                         <div>
                                             You wrote {timedWordTotal} words. You may now proofread your snippet, but you can only add or subtract 5 words.
                                             <TextField />
-                                            { wordCountDifference }
+                                            {/* { wordCountDifference } */}
                                             { Math.abs(wordCountDifference) <= 5 ?
-                                                <button>All Done!</button> 
-                                                :
                                                 <div>
+                                                    <button  style={buttonStyle}>All Done!</button> 
+                                                    <button style={buttonStyle}>Start Over with a New Prompt</button>
+                                                </div>
+                                                :
+                                                <div style={displayInline}>
                                                     { wordCountDifference > 5 ?
                                                         <div>
                                                             { wordCountDifference > 6 ?
-                                                                <button>Too Many Words! (delete {wordCountDifference - 5} words)</button>
+                                                                <button style={disabledButtonStyle}>Too Many Words! (delete {wordCountDifference - 5} words)</button>
                                                             : 
-                                                                <button>Too Many Words! (delete {wordCountDifference - 5} word)</button>
+                                                                <button style={disabledButtonStyle}>Too Many Words! (delete {wordCountDifference - 5} word)</button>
                                                             }
                                                         </div>
                                                         
                                                         :
                                                         <div>
                                                             { Math.abs(wordCountDifference) > 6 ?
-                                                                <button>Too Few Words! (add {Math.abs(wordCountDifference + 5)} words)</button>
+                                                                <button style={disabledButtonStyle}>Too Few Words! (add {Math.abs(wordCountDifference + 5)} words)</button>
                                                             : 
-                                                                <button>Too Few Words! (add {Math.abs(wordCountDifference + 5)} word)</button>
+                                                                <button style={disabledButtonStyle}>Too Few Words! (add {Math.abs(wordCountDifference + 5)} word)</button>
                                                             }
                                                         </div>
 
                                                        
                                                     
                                                     }
+                                                    <button style={buttonStyle}>Start Over with a New Prompt</button>
                                                 </div>
                                                 
                                             }
@@ -137,7 +164,7 @@ export default function Create() {
                                 </div>
                                 
                             :   <div>
-                                    {writingTimer}
+                                    <p style={timerStyle}>{writingTimer} seconds left</p>
                                     <TextField />
                                 </div>
                             }
