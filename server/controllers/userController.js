@@ -2,7 +2,7 @@ const {User} = require('../models');
 
 const { signToken } = require('../utils/auth');
 
-const userController = {
+module.exports = {
 
   //get all users
   getAllUsers(req, res) {
@@ -49,10 +49,10 @@ const userController = {
 
   //create user
   async createUser({ body }, res) {
-      const user = await User.create(body)
+      const user = await User.create(body);
 
       if (!user) {
-          return res.status(400).json({ mesage: 'Error occured creating user.'})
+          return res.status(400).json({ mesage: 'Error occured creating user.' });
       }
       const token = signToken(user);
       res.json({ token, user });
@@ -214,5 +214,3 @@ const userController = {
           .catch(err => res.json(err));
   },
 };
-
-module.exports = userController;
