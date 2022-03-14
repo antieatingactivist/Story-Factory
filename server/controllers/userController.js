@@ -65,7 +65,7 @@ module.exports = {
         return res.status(400).json({message: "Can't find user with this email and/or password."});
     };
     
-    const cPassword = await user.comparePasword(body.password);
+    const cPassword = await user.comparePassword(body.password);
 
     if(!cPassword) {
         return res.status(400).json({ message: 'Incorrect Password'});
