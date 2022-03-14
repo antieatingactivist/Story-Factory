@@ -5,12 +5,12 @@ import Story from './components/Story';
 import Login from './components/Login';
 import Home from './components/Home';
 import Create from './components/Create';
+import ParticleBackground from './components/particlebackground';
 // import UserProvider from './utils/UserContext';
 import { createContext, useContext, useState } from 'react';
 
 
 export const GlobalContext = createContext();
-
 
 function App() {
 
@@ -31,7 +31,7 @@ function App() {
   
   return (
     <div style={appStyle} className="App">
-      
+      <ParticleBackground/>
       <GlobalContext.Provider value={ {globalState, setGlobalState} }>
         <Header />
     
