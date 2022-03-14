@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { GlobalContext } from '../App';
-import { createUser } from '../utils/api';
+import { createUser, loginUser } from '../utils/API';
 
 
 
@@ -80,6 +80,11 @@ export default function Login() {
     const handleLoginSubmit = (e) => {
         // Preventing the default behavior of the form submit (which is to refresh the page)
         e.preventDefault();
+
+        const username = loginUserName;
+        const password = loginPassword;
+
+        loginUser([username, password]);
     
         // Alert the user their first and last name, clear the inputs
         // alert(`Hello ${userName}`);
