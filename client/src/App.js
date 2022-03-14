@@ -36,8 +36,7 @@ function App() {
         <Header />
     
         <Create />
-        {Story.homeShow ? <Home /> : <Story />}
-     
+        
         {globalState.homeShow ? <Home /> : <Story />}
       
         {globalState.loginShow ? <Login /> : <></>}

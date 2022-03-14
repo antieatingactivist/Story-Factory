@@ -22,12 +22,22 @@ a {
 }
 
 button {
+  position: relative;
   font-family: inherit;
   background-color: #aaaaaa00;
   border: 1px solid #ffffff;
   color: #FFFFFF;
   font-size: 1em;
+  cursor: pointer;
 
+}
+button:hover {
+  background-color: #aaaaaa22;
+}
+
+button:active {
+  left: 4px;
+  top: 2px;
 }
 
 input {

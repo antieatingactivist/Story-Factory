@@ -1,13 +1,17 @@
 
 
 
+const confirmStyle = {
+    fontSize: '1.4em'
+}
+
 export default function Confirm() {
     return (
         <section>
          
 
-                <button>I want to write about this!</button>
-                <button>Try a different prompt</button>
+                <button style={confirmStyle}>I want to write about this!</button>
+                <button style={confirmStyle}>Try a different prompt</button>
 
      
             
