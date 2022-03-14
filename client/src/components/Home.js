@@ -1,4 +1,5 @@
 import Snippet from './Snippet';
+import CreateButton from './CreateButton';
 
 const tempData = [
     {
@@ -78,6 +79,8 @@ export default function Home() {
     return (
         <section style={homeStyle}>
             <h1>Welcome back [User]</h1>
+
+            <CreateButton />
 
             <div style={divStyle}>
                 <h2>Contributions</h2>
