@@ -84,7 +84,7 @@ export default function Login() {
         const username = loginUserName;
         const password = loginPassword;
 
-        loginUser([username, password]);
+        loginUser({ username, password });
     
         // Alert the user their first and last name, clear the inputs
         // alert(`Hello ${userName}`);
@@ -100,9 +100,9 @@ export default function Login() {
         const username = signupUserName;
         const password = signupPassword;
 
-        console.log([username, password, email]);
+        console.log({username, password, email});
 
-        createUser([username, password, email]);
+        createUser({username, password, email});
 
         // Alert the user their first and last name, clear the inputs
         // alert(`Hello ${userName}`);
