@@ -77,7 +77,8 @@ const outLine = {
 export default function Home() {
     return (
         <section style={homeStyle}>
-            <h1>Welcome back [User]</h1>
+            <h1>Welcome back, [User]!</h1>
+            <h1>Featured Story</h1>
 
             <div style={divStyle}>
                 <h2>Contributions</h2>

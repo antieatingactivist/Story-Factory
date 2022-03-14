@@ -26,6 +26,9 @@ class TokenService {
           return false;
         }
       }
+      getProfile() {
+        return decode(this.getToken());
+      }
 }
 
 export default new TokenService(); 
