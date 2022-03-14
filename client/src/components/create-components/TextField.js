@@ -2,7 +2,7 @@ import { useState, useContext } from 'react';
 import { CreateContext } from '../Create';
 
 
-export default function TextField({text}) {
+export default function TextField() {
     
     const textFieldContents = useContext(CreateContext);
 
@@ -18,12 +18,15 @@ export default function TextField({text}) {
     };
 
     const textareaStyle = {
-        width: '100%',
+        width: 'calc(100% - 20px)',
         height: '200px',
-        backgroundColor: '#ffffff11',
+        backgroundColor: '#ffffff04',
         resize: 'none',
         font: 'inherit',
         color: '#ffffff',
+        padding: '10px',
+        WebkitBackdropFilter: 'blur(2px)',
+        backdropFilter: 'blur(2px)',
     }
     
     return (
