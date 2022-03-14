@@ -14,10 +14,12 @@ Do you enjoy writing and playing time attack games? Then welcome to Story-Factor
 * [Mongoose](https://mongoosejs.com/docs/)
 * [MongoDB](https://www.mongodb.com/)
 * [Nodemon](https://nodemon.io/)
+* [typewriter](https://www.npmjs.com/package/typewriter-effect?activeTab=readme)
+* [Particles](https://www.npmjs.com/package/react-particles-js)
 
 ## Deployed Link
 
-* [See Live Site]()
+* [See Live Site](https://quiet-sierra-37143.herokuapp.com/)
 
 ## Authors
 
