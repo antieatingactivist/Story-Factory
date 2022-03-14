@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/storyfactoryDB', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/quiet-sierra-37143', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
