@@ -16,7 +16,7 @@ class TokenService {
          const token = this.retrieveToken();
         return !!token && !this.isTokenExpired(token);
       }
-      isTokenExpired(token) {
+    isTokenExpired(token) {
         try {
           const decoded = decode(token);
           if (decoded.exp < Date.now() / 10000) {

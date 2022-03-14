@@ -29,8 +29,10 @@ export default function Nav() {
             <a style={aStyle} href="#f">Other Link</a>
             <a style={aStyle} href="#f" onClick={() => globalState.setGlobalState((prevState) => ({...prevState, homeShow: true}))} >Home</a>
             {Auth.loggedIn() ? (
-
-                  <a style={aStyle} href="#f" onClick={Auth.logout} >Logout</a>
+                <>
+                    <p style={aStyle} href="#f">Welcome Back!</p>
+                    <a style={aStyle} href="#f" onClick={Auth.logout} >Logout</a>
+                </>
             ) : ( 
                   <a style={aStyle} href="#f" onClick={() => globalState.setGlobalState((prevState) => ({...prevState, loginShow: true}))} >Login</a> 
             
