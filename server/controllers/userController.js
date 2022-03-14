@@ -1,6 +1,8 @@
 const {User} = require('../models');
-const bcrypt = require('bcryptjs')
-const userController = {
+
+const { signToken } = require('../utils/auth');
+
+module.exports = {
 
   //get all users
   getAllUsers(req, res) {
@@ -46,12 +48,14 @@ const userController = {
   },
 
   //create user
-  createUser({
-      body
-  }, res) {
-      User.create(body)
-          .then(dbUserData => res.json(dbUserData))
-          .catch(err => res.status(400).json(err));
+  async createUser({ body }, res) {
+      const user = await User.create(body);
+
+      if (!user) {
+          return res.status(400).json({ mesage: 'Error occured creating user.' });
+      }
+      const token = signToken(user);
+      res.json({ token, user });
   },
   
   //loginUser
@@ -210,5 +214,3 @@ const userController = {
           .catch(err => res.json(err));
   },
 };
-
-module.exports = userController;
