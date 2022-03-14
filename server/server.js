@@ -21,15 +21,15 @@ db.once('open', () => {
 });
 
 
-const User = require('./models/User')
-const userInput = {
-  username: 'jmar777',
-    password: 'Password123',
-    email: 'jmar777@gmail.com'
-}
-const user = new User(userInput);
-user.save((err,document)=>{
-  if(err)
-  console.log(err);
-  console.log(document);
-})
+// const User = require('./models/User')
+// const userInput = {
+//   username: 'jmar777',
+//     password: 'Password123',
+//     email: 'jmar777@gmail.com'
+// }
+// const user = new User(userInput);
+// user.save((err,document)=>{
+//   if(err)
+//   console.log(err);
+//   console.log(document);
+// })

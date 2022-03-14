@@ -15,7 +15,11 @@ const {
 router
   .route('/')
   .get(getAllUsers)
-  .post(createUser)
+  .post(createUser);
+
+
+router
+  .route('/login')
   .post(loginUser);
 
 // Set up GET one, PUT, and DELETE at /api/users/<id>
