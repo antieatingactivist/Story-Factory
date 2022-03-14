@@ -1,4 +1,6 @@
 import Snippet from './Snippet';
+import Create from './Create';
+import { useState } from 'react';
 
 const tempData = [
     {
@@ -74,23 +76,45 @@ const outLine = {
     padding: '10px',
 }
 
+const buttonDivStyle = {
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'center',
+    marginBottom: '50px',
+    marginTop: '50px',
+}
+const buttonStyle = {
+    fontSize: '2em',
+    padding: '0.5em'
+}
+
 export default function Home() {
+    const [createStart, setCreateStart] = useState(false);
+    // console.log(createStart)
     return (
         <section style={homeStyle}>
-            <h1>Welcome back [User]</h1>
+            
+            {createStart ? 
+                <Create /> 
+                
+                :
 
-            <div style={divStyle}>
-                <h2>Contributions</h2>
-                {tempData.map((snippet, index) => (
-                    <div key={index}>
-                    <Snippet  story={"default story"} text={snippet.text} color={textColors[index]} />
+                <div>
+                    <h1>Welcome back [User]</h1>
+                    <div style={buttonDivStyle}>
+                        <button style={buttonStyle} onClick={() => setCreateStart(true)}>Contribute to a Story!</button>
                     </div>
 
-                 ))}
-
-
-            </div>
-            
+                    <div style={divStyle}>
+                        <h2>Contributions</h2>
+                        {tempData.map((snippet, index) => (
+                            <div key={index}>
+                            <Snippet  story={"default story"} text={snippet.text} color={textColors[index]} />
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            }
             
 
 

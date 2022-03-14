@@ -35,7 +35,7 @@ function App() {
       <GlobalContext.Provider value={ {globalState, setGlobalState} }>
         <Header />
     
-        <Create />
+        {/* <Create /> */}
         
         {globalState.homeShow ? <Home /> : <Story />}
       
