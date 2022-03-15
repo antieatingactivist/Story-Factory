@@ -1,6 +1,7 @@
 const {
     Snippet,
-    User
+    User,
+    Story
 } = require('../models');
 const SnippetController = {
 
@@ -57,6 +58,18 @@ const SnippetController = {
                         }
                     }, {
                         new: true
+                    }
+                );
+            })
+            .then((SnippetData) => {
+                return Story.findOneAndUpdate(
+                    {
+                        storyname: body.storyname
+                    }, {
+                        $addToSet: {
+
+                            Snippet: SnippetData._id
+                        }
                     }
                 );
             })
