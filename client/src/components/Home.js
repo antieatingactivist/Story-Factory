@@ -50,6 +50,8 @@ const tempData = [
     }
 ]
 
+
+
 const textColors = [
     "#ef4444",
     "#f97316",
@@ -96,7 +98,8 @@ const buttonStyle = {
 export default function Home() {
     const [createStart, setCreateStart] = useState(false);
     // user result 96
-    const [userResult, setUserResult] = useState([]);
+    const [userResult, setUserResult] = useState(0);
+   
     // console.log(createStart)
     const returnUser = async () => {
         
@@ -128,7 +131,7 @@ export default function Home() {
         returnUser();
         
     }, [])
-    console.log("xxx");
+    console.log("xxx", userResult);
    
     return (
         <section style={homeStyle}>
@@ -147,11 +150,11 @@ export default function Home() {
 
                     <div style={divStyle}>
                         <h2>Contributions</h2>
-                        {tempData.map((snippet, index) => (
+                        {userResult ? userResult.Snippet.map((snippet, index) => (
                             <div key={index}>
-                            <Snippet  story={"default story"} text={userResult.Snippet} color={textColors[index]} />
+                            <Snippet story={"default story"} text={userResult ? userResult.Snippet[index].snippetText : null} color={textColors[index]} />
                             </div>
-                        ))}
+                        )) : null}
                     </div>
                 </div>
             }
