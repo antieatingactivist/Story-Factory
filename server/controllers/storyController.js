@@ -3,7 +3,7 @@ const { Story } = require('../models');
 const StoryController = {
     getAllStories(req, res) {
             Story.find({})
-            .populate({ path: 'Snippet',
+            .populate({ path: 'snippets',
                         select: ('-__v')
         })
         .select('-__v')
