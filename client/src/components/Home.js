@@ -130,7 +130,7 @@ export default function Home() {
 
         returnUser();
         
-    }, [])
+    }, [createStart])
     console.log("xxx", userResult);
    
     return (
@@ -152,7 +152,7 @@ export default function Home() {
                         <h2>Contributions</h2>
                         {userResult ? userResult.Snippet.map((snippet, index) => (
                             <div key={index}>
-                            <Snippet story={"default story"} text={userResult ? userResult.Snippet[index].snippetText : null} color={textColors[index]} />
+                            <Snippet story={"default story"} text={ userResult?.Snippet[index].snippetText} color={textColors[6]} />
                             </div>
                         )) : null}
                     </div>

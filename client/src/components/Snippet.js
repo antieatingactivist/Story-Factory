@@ -12,7 +12,7 @@ export default function Snippet({story, text, color}) {
         
     }
     const colorStyle = {
-        marginLeft: '5%',
+        marginLeft: '30px',
         color: color
     }
     const divStyle = {
