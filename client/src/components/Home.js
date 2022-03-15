@@ -131,7 +131,7 @@ export default function Home() {
         <section style={homeStyle}>
             
             {createStart ? 
-                <Create /> 
+                <Create user={userResult.username} /> 
                 
                 :
                 //  This is the name rendered to the page 133

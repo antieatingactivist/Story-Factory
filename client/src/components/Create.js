@@ -4,6 +4,7 @@ import Rules from './create-components/Rules';
 import LastSnippet from './create-components/LastSnippet';
 import TextField from './create-components/TextField';
 import Stats from './create-components/Stats';
+import { postSnippet } from '../utils/API';
 
 import { useState, createContext } from 'react';
 
@@ -43,7 +44,7 @@ const timerStyle = {
 
 
 
-export default function Create() {
+export default function Create({user}) {
     
     const [textFieldContents, setTextFieldContents] = useState('');
     const [showPassage, setShowPassage] = useState(false);
@@ -73,6 +74,13 @@ export default function Create() {
             
         },1000);
         setPassageIntervalId(timer);
+    }
+
+    const submitSnippet = () => {
+        postSnippet({
+            "snippetText": textFieldContents,
+	        "username": "garrett"
+        });
     }
 
     if (passageIntervalId && !passageTimer) {
@@ -128,7 +136,11 @@ export default function Create() {
                                             {/* { wordCountDifference } */}
                                             { Math.abs(wordCountDifference) <= 5 ?
                                                 <div>
-                                                    <button  style={buttonStyle}>All Done!</button> 
+
+
+                                                    <button style={buttonStyle} onClick={() => submitSnippet()}>All Done!</button> 
+
+
                                                     <button style={buttonStyle}>Start Over with a New Prompt</button>
                                                 </div>
                                                 :
