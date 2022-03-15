@@ -1,6 +1,6 @@
 import Snippet from './Snippet';
 import Create from './Create';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { getMe } from '../utils/API';
 import Auth from '../utils/auth';
 
@@ -119,7 +119,13 @@ export default function Home() {
         }
     }
     //calls return user function 122
-    returnUser();
+    // returnUser();
+    useEffect(()=>{
+
+        returnUser();
+        
+    }, [])
+    console.log("xxx");
    
     return (
         <section style={homeStyle}>
