@@ -51,7 +51,9 @@ const SnippetController = {
                         username: body.username
                     }, {
                         $addToSet: {
+
                             Snippet: SnippetData._id
+
                         }
                     }, {
                         new: true
@@ -61,7 +63,7 @@ const SnippetController = {
             .then(dbUsersData => {
                 if (!dbUsersData) {
                     res.status(404).json({
-                        message: 'No user found id.'
+                        message: 'No user found'
                     });
                     return;
                 }
