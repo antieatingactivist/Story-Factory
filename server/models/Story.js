@@ -1,6 +1,10 @@
 const { Schema, model } = require('mongoose');
 
 const storySchema = new Schema({
+    storyname: {
+        type: String,
+        unique: true,
+    },
     username: [{
         type: Schema.Types.ObjectId,
         ref: 'Users'
