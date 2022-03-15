@@ -77,7 +77,7 @@ export default function Create({user}) {
         }
     }
     const startWriting = () => {
-        setWritingTimer(10);
+        setWritingTimer(60);
         const timer = setInterval(()=>{
             setWritingTimer(timer => timer-1);
             
@@ -87,7 +87,7 @@ export default function Create({user}) {
     }
     const startGame = () => {
         setShowPassage(true);
-        setPassageTimer(10);
+        setPassageTimer(20);
         const timer = setInterval(()=>{
             setPassageTimer(timer => timer-1);
             

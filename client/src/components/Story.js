@@ -1,5 +1,6 @@
 import Snippet from './Snippet';
-
+import { getAllStories } from '../utils/API';
+import { useState, useEffect } from 'react';
 const tempData = [
     {
         id: 1,
@@ -66,6 +67,29 @@ const storyStyle = {
 }
 
 export default function Story() {
+    const [currentStory, setCurrentStory] = useState(0);
+    const getRandomStory = async () => {
+        
+        try {
+            const response = await getAllStories();
+            
+            const result = await response.json();
+
+            const randomNumber = Math.floor(Math.random() * result.length);
+
+            setCurrentStory(result[randomNumber]);
+
+        } catch (error){
+            console.error(error);
+        }
+    }
+
+    useEffect(()=>{
+
+        getRandomStory();
+        
+    }, [])
+    console.log("xxx", currentStory);
     return (
         <section style={storyStyle}>
       
