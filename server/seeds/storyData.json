@@ -16,7 +16,7 @@
 
 },{
     "storyname" : "Phone",
-    "prompt" : "You get a call from an known number. when you answer it it's",
+    "prompt" : "You get a call from an unknown number. when you answer it it's",
     "snippets" : []
 
 },{
