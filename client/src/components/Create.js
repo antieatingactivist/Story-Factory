@@ -65,7 +65,13 @@ export default function Create({user}) {
         
         try {
             const response = await getAllStories();
-            setCurrentStory(response);
+            
+            const result = await response.json();
+
+            const randomNumber = Math.floor(Math.random() * result.length);
+
+            setCurrentStory(result[randomNumber]);
+
         } catch (error){
             console.error(error);
         }

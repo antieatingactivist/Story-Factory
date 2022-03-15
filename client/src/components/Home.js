@@ -116,7 +116,7 @@ export default function Home() {
 
             const result = await response.json();
 
-            console.log("console log of result: ", result);
+            // console.log("console log of result: ", result);
 
             //hands off response 116
             setUserResult(result);
