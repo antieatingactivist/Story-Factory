@@ -77,7 +77,7 @@ export default function Create({user}) {
         }
     }
     const startWriting = () => {
-        setWritingTimer(2);
+        setWritingTimer(10);
         const timer = setInterval(()=>{
             setWritingTimer(timer => timer-1);
             
@@ -87,7 +87,7 @@ export default function Create({user}) {
     }
     const startGame = () => {
         setShowPassage(true);
-        setPassageTimer(2);
+        setPassageTimer(10);
         const timer = setInterval(()=>{
             setPassageTimer(timer => timer-1);
             
@@ -134,7 +134,7 @@ export default function Create({user}) {
 
             <div style={divStyle}>
             
-                <Prompt />
+                <Prompt prompt={currentStory.prompt} title={currentStory.storyname}/>
 
                 {!showPassage ?
                 <div>

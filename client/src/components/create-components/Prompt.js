@@ -3,13 +3,13 @@ const pStyle = {
     fontSize: '1.4em'
 }
 
-export default function Prompt() {
+export default function Prompt({prompt, title}) {
     return (
         <section>
          
-
+            <h2>{title}</h2>
           
-            <p style={pStyle}>This is the story Prompt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sed hendrerit libero. Morbi tristique, quam nec condimentum mattis, enim turpis aliquam ligula, non efficitur ex dolor nec metus. Pellentesque purus massa, pretium a mollis non, scelerisque vel elit. Aliquam tortor nisi, ultricies quis elementum non, faucibus ut neque.</p>
+            <h3 style={pStyle}>{prompt}...</h3>
 
             
 
