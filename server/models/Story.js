@@ -6,10 +6,12 @@ const storySchema = new Schema({
         unique: true,
     },
 
+
     prompt: {
         type: String,
         unique: true,
     },
+
     username: [{
         type: Schema.Types.ObjectId,
         ref: 'Users'
