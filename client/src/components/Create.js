@@ -139,7 +139,7 @@ export default function Create({user}) {
 
                 {!showPassage ?
                 <div>
-                    <Stats />
+                    <Stats numContributions={currentStory.snippetCount}/>
                     <Rules />
                 
                     <button style={buttonStyle} onClick={startGame}>I want to write about this!</button>
