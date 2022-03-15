@@ -2,7 +2,7 @@ const router = require('express').Router();
 
 const {
   getAllSnippets,
-  getSnippetById,
+  getSnippetByUserName,
   createSnippet,
   getSnippetsByUser,
 //   addReaction,
@@ -17,11 +17,11 @@ router
   .post(createSnippet);
 
 router
-  .route('/:snippetId')
-  .get(getSnippetById)
+  .route('/:username')
+  .get(getSnippetByUserName)
 
 router
-  .route('/me').get(authMiddleWare, getSnippetsByUser)
+  .route('/me').get(getSnippetsByUser)
 
 // router
 //   .route('/:snippetId/reactions')

@@ -16,16 +16,13 @@ const SnippetController = {
     },
 
     //get one Snippet by id
-    getSnippetById({
+    getSnippetByUserName({
         params
     }, res) {
-        Snippet.findOne({
-                _id: params.id
+        Snippet.find({
+                username: params.username
             })
             .select('-__v')
-            .sort({
-                _id: -1
-            })
             .then(dbSnippetData => {
                 if (!dbSnippetData) {
                     res.status(404).json({
@@ -78,8 +75,12 @@ const SnippetController = {
 
     async getSnippetsByUser({ body, user:userData }, res) {
         console.log('getSnippetByUser: ');
-        const user = await User.findOne({ username: userData.username})
-    }
+        const snippet = await Snippet.find({ username: userData.username});
+        if(!snippet) {
+            return res.status(404).json({ message: 'No snippet found with this associated name.'})
+        }
+        res.status(200).json(snippet);
+        }
 
     //create reactions
 //     addReaction({
