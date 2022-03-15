@@ -99,7 +99,8 @@ export default function Create({user}) {
     const submitSnippet = () => {
         postSnippet({
             "snippetText": textFieldContents,
-	        "username": user
+	        "username": user,
+            "storyname" : currentStory.storyname
         }).then(result => {
              (console.log(result));
              homeState.setCreateStart(false);
@@ -138,7 +139,7 @@ export default function Create({user}) {
 
                 {!showPassage ?
                 <div>
-                    <Stats />
+                    <Stats numContributions={currentStory.snippetCount}/>
                     <Rules />
                 
                     <button style={buttonStyle} onClick={startGame}>I want to write about this!</button>
@@ -148,7 +149,7 @@ export default function Create({user}) {
                     
                     {passageTimer ?
                         <div>
-                            <LastSnippet />
+                            <LastSnippet text={currentStory.snippets[currentStory.snippetCount-1]?.snippetText}/>
                             <p style={timerStyle}>{passageTimer} seconds left</p> 
                         </div>
                         :
