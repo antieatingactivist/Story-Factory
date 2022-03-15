@@ -99,7 +99,8 @@ export default function Create({user}) {
     const submitSnippet = () => {
         postSnippet({
             "snippetText": textFieldContents,
-	        "username": user
+	        "username": user,
+            "storyname" : currentStory.storyname
         }).then(result => {
              (console.log(result));
              homeState.setCreateStart(false);
