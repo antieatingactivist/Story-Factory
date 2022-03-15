@@ -5,10 +5,10 @@ const expiration = '6h';
 
 module.exports = {
     authMiddleWare: function (req, res, next) {
-        var token = req.query.token || req.header.authorization;
+        var token = req.query.token || req.headers.authorization;
 
-        if (req.header.authorization) {
-            token = token.split(' ').pop.trim();
+        if (token) {
+            token = token.split(' ').pop().trim();
         }
 
         if (!token) {

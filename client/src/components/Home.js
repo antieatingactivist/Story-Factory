@@ -1,6 +1,8 @@
 import Snippet from './Snippet';
 import Create from './Create';
 import { useState } from 'react';
+import { getMe } from '../utils/API';
+import Auth from '../utils/auth';
 
 const tempData = [
     {
@@ -90,7 +92,35 @@ const buttonStyle = {
 
 export default function Home() {
     const [createStart, setCreateStart] = useState(false);
+    // user result 96
+    const [userResult, setUserResult] = useState([]);
     // console.log(createStart)
+    const returnUser = async () => {
+        
+        try {
+            const token = Auth.retrieveToken();
+
+            console.log("return user token:", token)
+
+            if(!token) {
+                console.log('Problem with token found.')
+            }
+
+            const response = await getMe(token);
+
+            const result = await response.json();
+
+            console.log("console log of result: ", result.username);
+
+            //hands off response 116
+            setUserResult(result);
+        } catch (error){
+            console.error(error);
+        }
+    }
+    //calls return user function 122
+    returnUser();
+   
     return (
         <section style={homeStyle}>
             
@@ -98,9 +128,9 @@ export default function Home() {
                 <Create /> 
                 
                 :
-
-                <div>
-                    <h1>Welcome back [User]</h1>
+                //  This is the name rendered to the page 133
+                <div>                  
+                    <h1>Welcome back {userResult.username}</h1>
                     <div style={buttonDivStyle}>
                         <button style={buttonStyle} onClick={() => setCreateStart(true)}>Contribute to a Story!</button>
                     </div>

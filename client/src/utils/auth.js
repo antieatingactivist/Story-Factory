@@ -25,6 +25,9 @@ class TokenService {
         } catch (err) {
           return false;
         }
+    }
+      getProfile() {
+        return decode(this.retrieveToken());
       }
 }
 

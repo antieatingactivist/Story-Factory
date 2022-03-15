@@ -38,7 +38,10 @@ function App() {
         {/* <Create /> */}
         
         {globalState.homeShow ? <Home /> : <Story />}
-      
+
+       
+        
+
         {globalState.loginShow ? <Login /> : <></>}
      
       </GlobalContext.Provider>
