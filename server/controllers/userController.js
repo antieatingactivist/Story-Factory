@@ -29,22 +29,13 @@ module.exports = {
   },
 
   //get one user by id
-  getUserById({
-      params
-  }, res) {
-      User.findOne({
-              _id: params.id
-          })
-          .populate({
-              path: 'Snippet',
-              select: '-__v'
-          })
-          .select('-__v')
-          .then(dbUserData => res.json(dbUserData))
-          .catch(err => {
-              console.log(err);
-              res.sendStatus(400);
-          });
+  async getUserById({ body, user:userData }, res) {
+      console.log('getuserByID');
+      const user = await User.findOne({ username: userData.username });
+          if (!user) {
+            return res.status(404).json({ message: 'No user found with this name.' });
+          }
+          res.status(200).json(user);
   },
 
   //create user

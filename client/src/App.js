@@ -39,8 +39,6 @@ function App() {
         
         {globalState.homeShow ? <Home /> : <Story />}
 
-        <Create />
-
        
         
 
