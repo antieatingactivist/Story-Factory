@@ -82,7 +82,8 @@ export default function Create({user}) {
             "snippetText": textFieldContents,
 	        "username": user
         }).then(result => {
-             (console.log(result))
+             (console.log(result));
+             homeState.setCreateStart(false);
              
         });
     }
@@ -131,7 +132,7 @@ export default function Create({user}) {
                                     {!timesUp ? 
                                         <div>
                                             <button style={buttonStyle} onClick={startWriting}>Ready?</button>
-                                            <button style={buttonStyle}>Start Over with a New Prompt</button>
+                                            <button style={buttonStyle} onClick={() => (homeState.setCreateStart(false))}>Start Over with a New Prompt</button>
                                         </div>
                                         : 
                                         <div>
@@ -145,7 +146,7 @@ export default function Create({user}) {
                                                     <button style={buttonStyle} onClick={() => submitSnippet()}>All Done!</button> 
 
 
-                                                    <button style={buttonStyle}>Start Over with a New Prompt</button>
+                                                    <button style={buttonStyle} onClick={() => (homeState.setCreateStart(false))}>Start Over with a New Prompt</button>
                                                 </div>
                                                 :
                                                 <div style={displayInline}>
@@ -170,7 +171,7 @@ export default function Create({user}) {
                                                        
                                                     
                                                     }
-                                                    <button style={buttonStyle}>Start Over with a New Prompt</button>
+                                                    <button style={buttonStyle} onClick={() => (homeState.setCreateStart(false))}>Start Over with a New Prompt</button>
                                                 </div>
                                                 
                                             }
