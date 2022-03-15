@@ -113,7 +113,7 @@ export default function Home() {
 
             const result = await response.json();
 
-            console.log("console log of result: ", result.username);
+            console.log("console log of result: ", result);
 
             //hands off response 116
             setUserResult(result);
@@ -149,7 +149,7 @@ export default function Home() {
                         <h2>Contributions</h2>
                         {tempData.map((snippet, index) => (
                             <div key={index}>
-                            <Snippet  story={"default story"} text={snippet.text} color={textColors[index]} />
+                            <Snippet  story={"default story"} text={userResult.Snippet} color={textColors[index]} />
                             </div>
                         ))}
                     </div>

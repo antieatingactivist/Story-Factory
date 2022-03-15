@@ -41,9 +41,8 @@ const SnippetController = {
     },
 
     //create Snippet
-    addSnippet({
-        body
-    }, res) {
+    createSnippet({ body }, res) 
+    {
         Snippet.create(body)
             .then((SnippetData) => {
                 return User.findOneAndUpdate(
@@ -52,7 +51,9 @@ const SnippetController = {
                         username: body.username
                     }, {
                         $addToSet: {
-                            Snippets: SnippetData.username
+
+                            Snippet: SnippetData._id
+
                         }
                     }, {
                         new: true
@@ -73,6 +74,11 @@ const SnippetController = {
                 res.status(400).json(err);
             });
     },
+
+    async getSnippetsByUser({ body, user:userData }, res) {
+        console.log('getSnippetByUser: ');
+        const user = await User.findOne({ username: userData.username})
+    }
 
     //create reactions
 //     addReaction({

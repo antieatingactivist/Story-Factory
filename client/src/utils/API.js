@@ -36,4 +36,5 @@ export const postSnippet = (data) => {
     },
     body: JSON.stringify(data),
   });
-}
+
+};
