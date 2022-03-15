@@ -31,7 +31,11 @@ module.exports = {
   //get one user by id
   async getUserById({ body, user:userData }, res) {
       console.log('getuserByID');
-      const user = await User.findOne({ username: userData.username });
+      const user = await User.findOne({ username: userData.username }).populate({
+        path: 'Snippet',
+
+        select: ('-__v')
+    });
           if (!user) {
             return res.status(404).json({ message: 'No user found with this name.' });
           }
