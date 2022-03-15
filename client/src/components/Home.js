@@ -130,7 +130,7 @@ export default function Home() {
 
         returnUser();
         
-    }, [])
+    }, [createStart])
     console.log("xxx", userResult);
    
     return (
