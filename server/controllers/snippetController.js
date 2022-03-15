@@ -45,35 +45,23 @@ const SnippetController = {
     createSnippet({ body }, res) 
     {
         Snippet.create(body)
+                
+    
             .then((SnippetData) => {
-                return User.findOneAndUpdate(
-                    //create a Snippet using current user
-                    {
-                        username: body.username
-                    }, {
-                        $addToSet: {
-
-                            Snippet: SnippetData._id
-
-                        }
-                    }, {
-                        new: true
-                    }
-                );
-            })
-            .then((SnippetData) => {
+                
                 return Story.findOneAndUpdate(
                     {
                         storyname: body.storyname
                     }, {
                         $addToSet: {
 
-                            Snippet: SnippetData._id
+                            snippets: SnippetData._id
                         }
                     }
                 );
             })
             .then(dbUsersData => {
+                // console.log(dbUsersData)
                 if (!dbUsersData) {
                     res.status(404).json({
                         message: 'No user found'

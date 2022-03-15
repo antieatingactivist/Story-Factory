@@ -4,11 +4,12 @@ import Rules from './create-components/Rules';
 import LastSnippet from './create-components/LastSnippet';
 import TextField from './create-components/TextField';
 import Stats from './create-components/Stats';
-import { postSnippet } from '../utils/API';
+import { getAllStories, postSnippet } from '../utils/API';
+
 import { HomeContext } from './Home';
 
 
-import { useState, createContext, useContext } from 'react';
+import { useState, createContext, useContext, useEffect } from 'react';
 
 
 export const CreateContext = createContext();
@@ -57,10 +58,26 @@ export default function Create({user}) {
     const [writingIntervalId, setWritingIntervalId] = useState(0);
     const [timesUp, setTimesUp] = useState(false)
     const [timedWordTotal, setTimedWordTotal] = useState(0);
+    const [currentStory, setCurrentStory] = useState(0);
    
     console.log(textFieldContents);
+    const getRandomStory = async () => {
+        
+        try {
+            const response = await getAllStories();
+            
+            const result = await response.json();
+
+            const randomNumber = Math.floor(Math.random() * result.length);
+
+            setCurrentStory(result[randomNumber]);
+
+        } catch (error){
+            console.error(error);
+        }
+    }
     const startWriting = () => {
-        setWritingTimer(2);
+        setWritingTimer(10);
         const timer = setInterval(()=>{
             setWritingTimer(timer => timer-1);
             
@@ -70,7 +87,7 @@ export default function Create({user}) {
     }
     const startGame = () => {
         setShowPassage(true);
-        setPassageTimer(2);
+        setPassageTimer(10);
         const timer = setInterval(()=>{
             setPassageTimer(timer => timer-1);
             
@@ -99,9 +116,17 @@ export default function Create({user}) {
         setTimedWordTotal(textFieldContents.trim().split(/\s+/).length);
     }
 
+    useEffect(()=>{
+
+        getRandomStory();
+        
+    }, [])
+
  
     const wordCountDifference = textFieldContents.trim().split(/\s+/).length - timedWordTotal;
 
+
+    console.log(currentStory)
     return (
         <CreateContext.Provider value={ {textFieldContents, setTextFieldContents} }>
         <section style={createStyle}>
@@ -109,7 +134,7 @@ export default function Create({user}) {
 
             <div style={divStyle}>
             
-                <Prompt />
+                <Prompt prompt={currentStory.prompt} title={currentStory.storyname}/>
 
                 {!showPassage ?
                 <div>
