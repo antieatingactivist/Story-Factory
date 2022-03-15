@@ -1,8 +1,11 @@
 import Snippet from './Snippet';
 import Create from './Create';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, createContext } from 'react';
 import { getMe } from '../utils/API';
 import Auth from '../utils/auth';
+
+
+export const HomeContext = createContext();
 
 const tempData = [
     {
@@ -130,9 +133,10 @@ export default function Home() {
     return (
         <section style={homeStyle}>
             
-            {createStart ? 
-                <Create user={userResult.username} /> 
-                
+            {createStart ?
+                <HomeContext.Provider value={ {createStart, setCreateStart} }>
+                    <Create user={userResult.username} /> 
+                </HomeContext.Provider>
                 :
                 //  This is the name rendered to the page 133
                 <div>                  

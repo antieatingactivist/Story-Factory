@@ -5,8 +5,9 @@ import LastSnippet from './create-components/LastSnippet';
 import TextField from './create-components/TextField';
 import Stats from './create-components/Stats';
 import { postSnippet } from '../utils/API';
+import { HomeContext } from './Home';
 
-import { useState, createContext } from 'react';
+import { useState, createContext, useContext } from 'react';
 
 export const CreateContext = createContext();
 
@@ -45,7 +46,7 @@ const timerStyle = {
 
 
 export default function Create({user}) {
-    
+    const homeState = useContext(HomeContext);
     const [textFieldContents, setTextFieldContents] = useState('');
     const [showPassage, setShowPassage] = useState(false);
     const [passageTimer, setPassageTimer] = useState(0);
@@ -57,7 +58,7 @@ export default function Create({user}) {
    
     console.log(textFieldContents);
     const startWriting = () => {
-        setWritingTimer(12);
+        setWritingTimer(2);
         const timer = setInterval(()=>{
             setWritingTimer(timer => timer-1);
             
@@ -67,7 +68,7 @@ export default function Create({user}) {
     }
     const startGame = () => {
         setShowPassage(true);
-        setPassageTimer(12);
+        setPassageTimer(2);
         const timer = setInterval(()=>{
             setPassageTimer(timer => timer-1);
             
@@ -79,7 +80,10 @@ export default function Create({user}) {
     const submitSnippet = () => {
         postSnippet({
             "snippetText": textFieldContents,
-	        "username": "garrett"
+	        "username": user
+        }).then(result => {
+             (console.log(result))
+             
         });
     }
 
@@ -110,7 +114,7 @@ export default function Create({user}) {
                     <Rules />
                 
                     <button style={buttonStyle} onClick={startGame}>I want to write about this!</button>
-                    <button style={buttonStyle}>Try a different prompt</button>
+                    <button style={buttonStyle} onClick={() => (homeState.setCreateStart(false))}>Try a different prompt</button>
                 </div> :
                 <div>
                     
