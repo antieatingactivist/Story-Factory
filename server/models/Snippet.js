@@ -14,8 +14,8 @@ const SnippetSchema = new Schema({
 
     },
     
-    story: {
-        type: Schema.Types.ObjectId,
+    storyname: {
+        type: String,
         ref: 'Story',
 
     },
