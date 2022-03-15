@@ -5,6 +5,8 @@ import LastSnippet from './create-components/LastSnippet';
 import TextField from './create-components/TextField';
 import Stats from './create-components/Stats';
 
+import { postSnippet } from '../utils/API';
+
 import { useState, createContext } from 'react';
 
 export const CreateContext = createContext();

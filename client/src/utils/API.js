@@ -27,3 +27,13 @@ export const loginUser = (data) => {
       body: JSON.stringify(data),
     });
 };
+
+export const postSnippet = (data) => {
+  return fetch('/api/snippets/', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  });
+};
