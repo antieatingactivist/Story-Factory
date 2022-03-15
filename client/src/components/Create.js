@@ -149,7 +149,7 @@ export default function Create({user}) {
                     
                     {passageTimer ?
                         <div>
-                            <LastSnippet />
+                            <LastSnippet text={currentStory.snippets[currentStory.snippetCount-1]?.snippetText}/>
                             <p style={timerStyle}>{passageTimer} seconds left</p> 
                         </div>
                         :
