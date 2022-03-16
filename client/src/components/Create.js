@@ -1,5 +1,6 @@
 import Prompt from './create-components/Prompt';
 import Rules from './create-components/Rules';
+import Story from './Story';
 // import Confirm from './create-components/Confirm';
 import LastSnippet from './create-components/LastSnippet';
 import TextField from './create-components/TextField';
@@ -59,6 +60,7 @@ export default function Create({user}) {
     const [timesUp, setTimesUp] = useState(false)
     const [timedWordTotal, setTimedWordTotal] = useState(0);
     const [currentStory, setCurrentStory] = useState(0);
+    const [finshedStory, showFinshedStory] = useState(false);
    
     console.log(textFieldContents);
     const getRandomStory = async () => {
@@ -77,7 +79,7 @@ export default function Create({user}) {
         }
     }
     const startWriting = () => {
-        setWritingTimer(60);
+        setWritingTimer(6);
         const timer = setInterval(()=>{
             setWritingTimer(timer => timer-1);
             
@@ -87,7 +89,7 @@ export default function Create({user}) {
     }
     const startGame = () => {
         setShowPassage(true);
-        setPassageTimer(20);
+        setPassageTimer(2);
         const timer = setInterval(()=>{
             setPassageTimer(timer => timer-1);
             
@@ -102,8 +104,9 @@ export default function Create({user}) {
 	        "username": user,
             "storyname" : currentStory.storyname
         }).then(result => {
-             (console.log(result));
-             homeState.setCreateStart(false);
+            //  (console.log(result));
+            //  homeState.setCreateStart(false);
+            showFinshedStory(true);
              
         });
     }
@@ -130,6 +133,7 @@ export default function Create({user}) {
     console.log(currentStory)
     return (
         <CreateContext.Provider value={ {textFieldContents, setTextFieldContents} }>
+        {!finshedStory ?
         <section style={createStyle}>
             <h1>Are You Ready? Here is your Prompt</h1>
 
@@ -225,6 +229,9 @@ export default function Create({user}) {
 
 
         </section>
+        :
+        <Story storyName={currentStory.storyname}/>
+        }
         </CreateContext.Provider>
     );
   }

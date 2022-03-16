@@ -13,7 +13,7 @@ router
     .post(postStory)
 
 router
-    .route('/:storyId')
+    .route('/:storyName')
     .get(getSingleStory);
 
 module.exports = router;

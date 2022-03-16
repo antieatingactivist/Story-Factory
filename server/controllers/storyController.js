@@ -14,10 +14,11 @@ const StoryController = {
     },
 
     getSingleStory({ params }, res) {
+
             Story.findOne({
-                _id: params.id
+                storyname: params.storyName
             })
-            .populate({ path: 'Snippet',
+            .populate({ path: 'snippets',
                         select: ('-__v')
         })
         .select('-__v')
