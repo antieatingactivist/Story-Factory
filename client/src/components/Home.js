@@ -1,8 +1,9 @@
 import Snippet from './Snippet';
 import Create from './Create';
 import { useState, useEffect, createContext } from 'react';
-import { getMe } from '../utils/API';
+import { getMe, getSnippetByUserName } from '../utils/API';
 import Auth from '../utils/auth';
+// import { params } from 'react-router-dom';
 
 
 export const HomeContext = createContext();
@@ -132,6 +133,16 @@ export default function Home() {
         
     }, [createStart])
     console.log("xxx", userResult);
+
+    // export default function Snippets () {
+    //     const [user, setUser] = useState(null)
+    //     const { snippet } = useParams()
+      
+    //     useEffect(() => {
+    //         getSnippetByUserName(userResult.username)
+    //         .then(setUser)
+    //     }, [snippet])
+    // }
    
     return (
         <section style={homeStyle}>
