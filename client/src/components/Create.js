@@ -230,7 +230,10 @@ export default function Create({user}) {
 
         </section>
         :
-        <Story storyName={currentStory.storyname}/>
+        <>
+            <Story storyName={currentStory.storyname}/>
+            <button style={buttonStyle} onClick={() => (homeState.setCreateStart(false))}>Go Back Home!</button>
+        </>
         }
         </CreateContext.Provider>
     );

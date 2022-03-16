@@ -30,9 +30,9 @@ export default function Story({storyName}) {
     const getStory = async () => {
         
         try {
-            let response;
+            
             if (!storyName) {
-                response = await getAllStories();
+                const response = await getAllStories();
                 const result = await response.json();
 
                 const randomNumber = Math.floor(Math.random() * result.length);
@@ -43,7 +43,7 @@ export default function Story({storyName}) {
             
             
             else {
-                response = await getSingleStory(storyName);
+                const response = await getSingleStory(storyName);
                 const result = await response.json();
 
                 setCurrentStory(result);
