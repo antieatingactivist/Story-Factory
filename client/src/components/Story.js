@@ -19,10 +19,12 @@ const textColors = [
 
 const storyStyle = {
 
- width: '80%',
-//  backgroundColor: '#222222',
- marginLeft: '10%',
- marginTop: '3%',
+    width: '80%',
+    marginLeft: '10%',
+    marginTop: '3%',
+}
+const pStyle = {
+    marginLeft: '120px',
 }
 
 export default function Story({storyName}) {
@@ -55,20 +57,21 @@ export default function Story({storyName}) {
         }
     }
 
-    useEffect((storyName)=>{
+    useEffect(()=>{
 
         getStory();
        
         
     }, [])
-    console.log("yyyy", storyName);
+
+    console.log("yyyy", currentStory);
     return (
         <section style={storyStyle}>
       
-            <p>{currentStory.storyname}</p>
-            <p>{currentStory.prompt}</p>
+            <h2>{currentStory.storyname}</h2>
+            <p style={pStyle}>{currentStory.prompt}</p>
             {currentStory.snippets?.map((snippet, index) => (
-                <Snippet text={snippet.snippetText} color={textColors[index]} key={index}/>
+                <Snippet text={snippet.snippetText} color={textColors[index]} key={index} author={snippet.username}/>
 
 
             ))}

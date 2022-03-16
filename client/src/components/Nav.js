@@ -26,7 +26,7 @@ export default function Nav() {
         <nav style={navStyle}>
 
             
-            <a style={aStyle} href="/">Other Link</a>
+            <a style={aStyle} href="#f" onClick={() => globalState.setGlobalState((prevState) => ({...prevState, homeShow: false}))}>Story Factory</a>
             
             {Auth.loggedIn() ? (
                 <>
