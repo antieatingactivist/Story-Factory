@@ -67,8 +67,8 @@ export const postStory = (data) => {
 
 };
 
-export const getSnippetByUserName = () => {
-  return fetch('/api/snippets/:username', {
+export const getSnippetByUserName = (username) => {
+  return fetch(`/api/snippets/${username}`, {
     headers: {
       'Content-Type': 'application/json',
     }

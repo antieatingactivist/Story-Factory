@@ -89,7 +89,7 @@ export default function Story() {
         getRandomStory();
         
     }, [])
-    console.log("xxx", currentStory);
+    // console.log("xxx", currentStory);
     return (
         <section style={storyStyle}>
       

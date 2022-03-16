@@ -1,7 +1,7 @@
 import Snippet from './Snippet';
 import Create from './Create';
 import { useState, useEffect, createContext } from 'react';
-import { getMe, getSnippetByUserName } from '../utils/API';
+import { getAllStories, getMe, getSnippetByUserName } from '../utils/API';
 import Auth from '../utils/auth';
 // import { params } from 'react-router-dom';
 
@@ -100,6 +100,7 @@ export default function Home() {
     const [createStart, setCreateStart] = useState(false);
     // user result 96
     const [userResult, setUserResult] = useState(0);
+    const [userSnippets, setUserSnippets] = useState(null);
    
     // console.log(createStart)
     const returnUser = async () => {
@@ -125,25 +126,38 @@ export default function Home() {
             console.error(error);
         }
     }
+    const getUserSnippets = async () => {
+        try {
+            const response = await getSnippetByUserName(userResult.username);
+            
+            
+            const result = await response.json();
+            // console.log(result);
+            setUserSnippets(result);
+        } catch (error){
+            console.error(error);
+        }
+    }
+
     //calls return user function 122
     // returnUser();
     useEffect(()=>{
 
         returnUser();
+        // getUserSnippets();
         
-    }, [createStart])
-    console.log("xxx", userResult);
+    }, [createStart]);
 
-    // export default function Snippets () {
-    //     const [user, setUser] = useState(null)
-    //     const { snippet } = useParams()
-      
-    //     useEffect(() => {
-    //         getSnippetByUserName(userResult.username)
-    //         .then(setUser)
-    //     }, [snippet])
-    // }
-   
+    useEffect(()=>{
+        getUserSnippets();
+
+    }, [userResult] )
+
+
+
+    // console.log("xxx", userSnippets);
+
+    
     return (
         <section style={homeStyle}>
             
@@ -161,11 +175,12 @@ export default function Home() {
 
                     <div style={divStyle}>
                         <h2>Contributions</h2>
-                        {userResult ? userResult.Snippet.map((snippet, index) => (
+                        {userSnippets?.map((snippet, index) => (
                             <div key={index}>
-                            <Snippet story={ userResult?.Snippet[index].storyname} text={ userResult?.Snippet[index].snippetText} color={textColors[6]} />
+                         
+                            <Snippet story={snippet.storyname} text={snippet.snippetText} color={textColors[6]} />
                             </div>
-                        )) : null}
+                        ))}
                     </div>
                 </div>
             }
