@@ -48,8 +48,8 @@ export const getAllStories = () => {
   });
 };
 
-export const getSingleStory = () => {
-  return fetch('/api/stories/:storyId', {
+export const getSingleStory = (storyName) => {
+  return fetch(`/api/stories/${storyName}`, {
     headers: {
       'Content-Type': 'application/json'
     },
