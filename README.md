@@ -1,4 +1,4 @@
-# Story-Factory
+# [Story-Factory](https://quiet-sierra-37143.herokuapp.com/)
 
 Do you enjoy writing and playing time attack games? Then welcome to Story-Factory, a writing game with a time attack game that lets you build stories with friends or strangers! Start a new story or find someone elses, get a brief few moments to read what has been written before then start typing. you get a set amount of time before your time runs out so type as fast as you can.
 
@@ -18,6 +18,12 @@ Do you enjoy writing and playing time attack games? Then welcome to Story-Factor
 * [Particles](https://www.npmjs.com/package/react-particles-js)
 
 ## Deployed Link
+
+![intro](https://user-images.githubusercontent.com/91674571/158633855-f4032634-7d44-42e7-b046-6936989d7d72.gif)
+
+![image](https://user-images.githubusercontent.com/91674571/158634336-69d4dd07-3eac-4445-b098-067f828f0c4c.png)
+
+![Screenshot 2022-03-14 140111](https://user-images.githubusercontent.com/91674571/158632928-e56501c7-7459-45c3-ac67-00d70a111594.png)
 
 * [See Live Site](https://quiet-sierra-37143.herokuapp.com/)
 
@@ -42,7 +48,3 @@ Do you enjoy writing and playing time attack games? Then welcome to Story-Factor
 ## License
 
 This project is licensed under the MIT License 
-
-## Acknowledgments
-
-* 
