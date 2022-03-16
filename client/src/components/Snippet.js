@@ -11,6 +11,10 @@ export default function Snippet({story, text, color}) {
         
         
     }
+    const storyTitleStyle = {
+        marginLeft: '30px',
+        fontSize: '1.4em'
+    }
     const colorStyle = {
         marginLeft: '30px',
         color: color
@@ -29,12 +33,13 @@ export default function Snippet({story, text, color}) {
 
     return (
         <section style={snippetStyle}>
-            <a href="#gotostory">{story}</a>
+            
             <div style={divStyle}>
                 <div style={voteStyle}>
                     +1
                 </div>
                 <div>
+                    <a style={storyTitleStyle} href="#gotostory">{story}</a>
                     <p style={colorStyle}>{text}</p>
                 </div>
             </div>
