@@ -89,14 +89,14 @@ export default function Story() {
         getRandomStory();
         
     }, [])
-    // console.log("xxx", currentStory);
+    console.log("xxx", currentStory);
     return (
         <section style={storyStyle}>
       
-            <p>Story Title</p>
-            
-            {tempData.map((snippet, index) => (
-                <Snippet text={snippet.text} color={textColors[index]} key={snippet.id}/>
+            <p>{currentStory.storyname}</p>
+            <p>{currentStory.prompt}</p>
+            {currentStory.snippets?.map((snippet, index) => (
+                <Snippet text={snippet.snippetText} color={textColors[index]} key={index}/>
 
 
             ))}
