@@ -30,8 +30,8 @@ Do you enjoy writing and playing time attack games? Then welcome to Story-Factor
 ## Authors
 
 * **Garrett Corbin** 
-- [Link to Portfolio Site](https://antieatingactivist.github.io/Portfolio-V3.0/)
-- [Link to Github](https://github.com/antieatingactivist)
+- [Link to Portfolio Site](https://platevoltage.github.io/Portfolio-V3.0/)
+- [Link to Github](https://github.com/platevoltage)
 - [Link to LinkedIn](https://www.linkedin.com/in/garrett-corbin-7a7777227/)
 
 * **Millard Chambers** 
