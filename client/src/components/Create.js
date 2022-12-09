@@ -72,14 +72,15 @@ export default function Create({user}) {
 
             const randomNumber = Math.floor(Math.random() * result.length);
 
-            setCurrentStory(result[randomNumber]);
+            // setCurrentStory(result[randomNumber]);
+            setCurrentStory(result[4]); // set current story to Tech by default instead of random story
 
         } catch (error){
             console.error(error);
         }
     }
     const startWriting = () => {
-        setWritingTimer(6);
+        setWritingTimer(15);
         const timer = setInterval(()=>{
             setWritingTimer(timer => timer-1);
             
@@ -89,7 +90,7 @@ export default function Create({user}) {
     }
     const startGame = () => {
         setShowPassage(true);
-        setPassageTimer(2);
+        setPassageTimer(5);
         const timer = setInterval(()=>{
             setPassageTimer(timer => timer-1);
             

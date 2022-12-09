@@ -1,18 +1,21 @@
+import React from "react"
 
 
    
 export default function Snippet({story, text, color, author}) {
 
     const snippetStyle = {
-        width: '80%',
-        marginLeft: '5%',
+        // width: '80%',
+        // marginLeft: '5%',
         // marginBottom: '5%',
         // backgroundColor: "#ef444422"
+        border: '1px solid #ffffff33'
         
         
     }
     const authorStyle = {
-        color: "#444444"
+        color: "#444444",
+        width: '120px',
     }
     const storyTitleStyle = {
         marginLeft: '30px',
