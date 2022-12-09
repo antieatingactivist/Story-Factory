@@ -3,6 +3,7 @@ import Nav from './Nav';
 import { GlobalContext } from '../App';
 import { useContext } from 'react';
 import Typewriter from 'typewriter-effect'
+import React from 'react';
 
 const headerStyle = {
     paddingTop: "10px",

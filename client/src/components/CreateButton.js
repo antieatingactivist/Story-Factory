@@ -1,3 +1,5 @@
+import React from "react";
+
 const divStyle = {
     width: '100%',
     display: 'flex',
