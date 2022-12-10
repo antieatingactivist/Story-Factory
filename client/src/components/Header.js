@@ -13,7 +13,7 @@ const headerStyle = {
 }
 const titleStyle = {
         
-    fontSize: "4em",
+    fontSize: "3em",
     paddingLeft: "30px",
     // backgroundColor: "#000000",
     whiteSpace: "nowrap"

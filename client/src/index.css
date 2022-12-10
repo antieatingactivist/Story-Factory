@@ -3,11 +3,12 @@ body {
   /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif; */
-  font-family: 'Typewriter';
+  font-family: 'Apple';
+  letter-spacing: -.1em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #0d1a0c;
-  color: #38ba09;
+  background-color: #0020af;
+  color: #ffffff;
 
 }
 
@@ -18,7 +19,7 @@ code {
 
 a {
   text-decoration: none;
-  color: #38ba09;
+  color: #ffffff;
 }
 
 button {
@@ -67,5 +68,11 @@ h3 {
 @font-face {
   font-family: 'Typewriter';
   src: url(./assets/fonts/American\ Typewriter\ Regular.ttf);
+
+}
+
+@font-face {
+  font-family: 'Apple';
+  src: url(./assets/fonts/apple.ttf);
 
 }

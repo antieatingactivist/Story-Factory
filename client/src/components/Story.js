@@ -17,7 +17,7 @@ const textColors = [
 ];
 
 const storyStyle = {
-    border: "1px solid #ffffff44",
+    // border: "1px solid #ffffff44",
     width: '80%',
     minHeight: '1000px',
     marginLeft: '10%',
@@ -28,7 +28,7 @@ const storyStyle = {
 
 }
 const pStyle = {
-    border: "1px solid #ffffff44",
+    // border: "1px solid #ffffff44",
     // marginLeft: '120px',
     textAlign: "center"
 }
@@ -39,7 +39,7 @@ const holeStyle = {
     width: "10px",
     borderRadius: "10px",
     marginLeft: "35%",
-    marginTop: "10px"
+    marginTop: "14px"
 }
 const marginStyle = {
     width: "40px", 

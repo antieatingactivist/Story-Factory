@@ -4,7 +4,7 @@ import Header from './components/Header';
 import Story from './components/Story';
 import Login from './components/Login';
 import Home from './components/Home';
-import ParticleBackground from './components/particlebackground';
+
 // import UserProvider from './utils/UserContext';
 import { createContext, useState } from 'react';
 

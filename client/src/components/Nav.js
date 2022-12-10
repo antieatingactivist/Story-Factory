@@ -7,7 +7,7 @@ const navStyle = {
     display: "flex",
     justifyContent: "flex-end", 
     // backgroundColor: "#222222",
-    fontSize: "1.4em",
+    fontSize: "1rem",
     width: "100%",
        
 }
