@@ -24,7 +24,11 @@ export default function Snippet({story, text, color, author}) {
     }
     const colorStyle = {
         marginLeft: '20px',
-        color: color
+        color: color,
+        whiteSpace: "normal",
+        overflowWrap: "break-word",
+        width: '100%'
+        
     }
     const divStyle = {
         display: 'flex',

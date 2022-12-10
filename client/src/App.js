@@ -26,23 +26,31 @@ function App() {
     flexDirection: 'column',
     
   }
+  const overlayStyle = {
+    background: "repeating-linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.2) 1px,  transparent 2px,  transparent 3px)",
+    height: "100vh",
+    width: "100vw",
+    position: "absolute",
+    pointerEvents: "none"
+  }
   
   return (
     <div style={appStyle} className="App">
-      {/* <ParticleBackground/> */}
       <GlobalContext.Provider value={ {globalState, setGlobalState} }>
         <Header />
     
         
-        {globalState.homeShow ? <Home /> : <Story />}
+        {/* {globalState.homeShow ? <Home /> : <Story />} */}
 
        
         
 
-        {globalState.loginShow ? <Login /> : <></>}
+        {globalState.loginShow ? 
+          <Login /> : 
+          <>{globalState.homeShow ? <Home /> : <Story />}</>}
      
       </GlobalContext.Provider>
-
+      <div style={overlayStyle}></div>
     </div>
   );
 }

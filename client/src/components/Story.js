@@ -22,15 +22,18 @@ const storyStyle = {
     minHeight: '1000px',
     marginLeft: '10%',
     marginTop: '3%',
-    backgroundColor: "#ffffff",
+    backgroundColor: "#eeeeee",
     color: '#000000',
     display: 'flex',
+    zIndex: 2,
 
 }
 const pStyle = {
-    // border: "1px solid #ffffff44",
+    // border: "1px solid #ffffffff",
     // marginLeft: '120px',
-    textAlign: "center"
+    textAlign: "center",
+    overflowWrap: "normal",
+
 }
 const holeStyle = {
     border: "1px solid black",
