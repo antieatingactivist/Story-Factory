@@ -18,15 +18,17 @@ const textColors = [
 
 const storyStyle = {
     // border: "1px solid #ffffff44",
+    boxShadow: "3px 3px 5px black",
     width: '80%',
     // height: '50%',
     // minHeight: '1000px',
     marginLeft: '10%',
     marginTop: '3%',
-    backgroundColor: "#eeeeee",
+    background: "linear-gradient(159deg, rgba(255,255,255,1) 0%, rgba(187,187,187,1) 100%)",
     color: '#000000',
     display: 'flex',
     zIndex: 2,
+    // transform: "skew(-.4deg, .5deg)"
 
 }
 const pStyle = {
@@ -37,7 +39,9 @@ const pStyle = {
 
 }
 const holeStyle = {
+    boxShadow: "inset 1px 1px 5px black",
     border: "1px solid black",
+    backgroundColor: "#0020af",
     height: "10px",
     minHeight: "10px",
     width: "10px",
