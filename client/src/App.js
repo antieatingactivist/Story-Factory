@@ -24,11 +24,12 @@ function App() {
   const appStyle = {
     display: 'flex',
     flexDirection: 'column',
+    height: '100%',
     
   }
   const overlayStyle = {
     background: "repeating-linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.2) 1px,  transparent 2px,  transparent 3px)",
-    height: "100vh",
+    minHeight: "100%",
     width: "100vw",
     position: "absolute",
     pointerEvents: "none"
@@ -47,7 +48,8 @@ function App() {
 
         {globalState.loginShow ? 
           <Login /> : 
-          <>{globalState.homeShow ? <Home /> : <Story />}</>}
+          <>{globalState.homeShow ? <Home /> : <Story />}</>
+        }
      
       </GlobalContext.Provider>
       <div style={overlayStyle}></div>
