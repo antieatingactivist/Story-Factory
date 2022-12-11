@@ -15,8 +15,8 @@ export default function Snippet({story, text, color, author}) {
     }
     const authorStyle = {
         color: "#444444",
-        width: '120px',
-        fontSize: '.8em'
+        width: '100px',
+        fontSize: '.6em'
     }
     const storyTitleStyle = {
         marginLeft: '30px',
