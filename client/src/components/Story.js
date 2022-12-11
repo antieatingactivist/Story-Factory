@@ -26,6 +26,7 @@ const storyStyle = {
     marginTop: '3%',
     background: "linear-gradient(159deg, rgba(255,255,255,1) 0%, rgba(187,187,187,1) 100%)",
     color: '#000000',
+    textShadow: "none",
     display: 'flex',
     zIndex: 2,
     // transform: "skew(-.4deg, .5deg)"
