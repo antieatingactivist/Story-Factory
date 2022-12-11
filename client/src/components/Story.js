@@ -19,7 +19,8 @@ const textColors = [
 const storyStyle = {
     // border: "1px solid #ffffff44",
     width: '80%',
-    minHeight: '1000px',
+    // height: '50%',
+    // minHeight: '1000px',
     marginLeft: '10%',
     marginTop: '3%',
     backgroundColor: "#eeeeee",

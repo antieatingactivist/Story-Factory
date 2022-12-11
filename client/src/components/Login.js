@@ -27,23 +27,22 @@ export default function Login() {
         border: "1px solid #ffffff",
 
         backgroundColor: '#000000bb',
-        WebkitBackdropFilter: 'blur(6px)',
-        MozBackdropFilter: 'blur(6px)',
-        backdropFilter: 'blur(6px)',
+
         height: '300px',
         width: '80vw',
         padding: '20px',
-        fontSize: '1.4em'
+        fontSize: '1em'
 
     }
     const divStyle = {
         width: '50%',
-        marginLeft: '10%',
-        marginRight: '10%',
+        textAlign: "center",
+        // marginLeft: '10%',
+        // marginRight: '10%',
     }
 
     const formStyle = {
-        marginLeft: '10%',
+        // marginLeft: '10%',
     }
     const dividerStyle = {
         height: '100%',
@@ -149,70 +148,70 @@ export default function Login() {
    
         <section style={loginStyle}>
 
-        <div style={divStyle}>
-        <p>Welcome Back Writers!</p>
-        <form className="form" style={formStyle}>
-            <input
-            value={loginUserName}
-            name="loginUserName"
-            onChange={handleInputChange}
-            // onChange={orThisWayForBoth}
-            type="text"
-            placeholder="userName"
-    
-            /><br />
-            <input
-            value={loginPassword}
-            name="loginPassword"
-            onChange={handleInputChange}
-            // onChange={orThisWayForBoth}
-            type="password"
-            placeholder="password"
+            <div style={divStyle}>
+                <p>Welcome Back Writers!</p>
+                <form className="form" style={formStyle}>
+                    <input
+                    value={loginUserName}
+                    name="loginUserName"
+                    onChange={handleInputChange}
+                    // onChange={orThisWayForBoth}
+                    type="text"
+                    placeholder="userName"
+            
+                    /><br />
+                    <input
+                    value={loginPassword}
+                    name="loginPassword"
+                    onChange={handleInputChange}
+                    // onChange={orThisWayForBoth}
+                    type="password"
+                    placeholder="password"
 
-            /><br />
-            <button type="button" onClick={handleLoginSubmit}>
-            Login!
-            </button>
-      </form>
-        </div>
+                    /><br />
+                    <button type="button" onClick={handleLoginSubmit}>
+                    Login!
+                    </button>
+                </form>
+            </div>
 
-        <div style={dividerStyle}></div>
+            <div style={dividerStyle}></div>
 
-        <div style={divStyle}>
-        <p>Not a member? Join the Community!</p>
-      <form className="form" style={formStyle}>
-        <input
-          value={signupUserName}
-          name="signupUserName"
-          onChange={handleInputChange}
-          // onChange={orThisWayForBoth}
-          type="text"
-          placeholder="userName"
-  
-        /><br />
-        <input
-          value={email}
-          name="email"
-          onChange={handleInputChange}
-          // onChange={orThisWayForBoth}
-          type="email"
-          placeholder="email"
+            <div style={divStyle}>
+                <p>Not a member? Join the Community!</p>
+                <form className="form" style={formStyle}>
+                    <input
+                    value={signupUserName}
+                    name="signupUserName"
+                    onChange={handleInputChange}
+                    // onChange={orThisWayForBoth}
+                    type="text"
+                    placeholder="userName"
+            
+                    /><br />
+                    <input
+                    value={email}
+                    name="email"
+                    onChange={handleInputChange}
+                    // onChange={orThisWayForBoth}
+                    type="email"
+                    placeholder="email"
 
-        /><br />
-        <input
-          value={signupPassword}
-          name="signupPassword"
-          onChange={handleInputChange}
-          // onChange={orThisWayForBoth}
-          type="password"
-          placeholder="password"
+                    /><br />
+                    <input
+                    value={signupPassword}
+                    name="signupPassword"
+                    onChange={handleInputChange}
+                    // onChange={orThisWayForBoth}
+                    type="password"
+                    placeholder="password"
 
-        /><br />
-        <button type="button" onClick={handleSignupSubmit}>
-          Join Us!
-        </button>
-      </form>
-      </div>
+                    /><br />
+                    <button type="button" onClick={handleSignupSubmit}>
+                    Join Us!
+                    </button>
+                </form>
+            </div>
         </section>
    
     );
