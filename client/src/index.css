@@ -6,16 +6,13 @@ html{
 
 body {
   margin: 0;
-  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif; */
   font-family: 'Apple';
   letter-spacing: -.1em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #0020af;
   color: #ffffff;
-  text-shadow: rgba(234, 0, 255, 0.688) -1px 1px, rgba(32, 192, 0, 0.715) 1px -1px;
+  text-shadow: #ea00ffaf -1px 1px, #20c000b6 1px -1px;
   height:100%;
   
 

@@ -9,9 +9,6 @@ export default function Login() {
 
     const globalState = useContext(GlobalContext);
 
-    
-    // console.log(storyShow.loginShow);
-
     const [loginUserName, setLoginUserName] = useState('');
     const [loginPassword, setLoginPassword] = useState('');
     const [signupUserName, setSignupUserName] = useState('');
@@ -37,12 +34,10 @@ export default function Login() {
     const divStyle = {
         width: '50%',
         textAlign: "center",
-        // marginLeft: '10%',
-        // marginRight: '10%',
     }
 
     const formStyle = {
-        // marginLeft: '10%',
+        //
     }
     const dividerStyle = {
         height: '100%',
@@ -100,8 +95,6 @@ export default function Login() {
             console.error(error)
         }
 
-        
-    
         // Alert the user their first and last name, clear the inputs
         // alert(`Hello ${userName}`);
         setLoginUserName('');
@@ -142,8 +135,6 @@ export default function Login() {
         globalState.setGlobalState((prevState) => ({...prevState, loginShow: false}));
     };
 
-
-    //   console.log(this);
     return (
    
         <section style={loginStyle}>

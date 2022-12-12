@@ -17,11 +17,8 @@ const textColors = [
 ];
 
 const storyStyle = {
-    // border: "1px solid #ffffff44",
     boxShadow: "3px 3px 5px black",
     width: '80%',
-    // height: '50%',
-    // minHeight: '1000px',
     marginLeft: '10%',
     marginTop: '3%',
     background: "linear-gradient(159deg, rgba(255,255,255,1) 0%, rgba(187,187,187,1) 100%)",
@@ -29,15 +26,10 @@ const storyStyle = {
     textShadow: "none",
     display: 'flex',
     zIndex: 2,
-    // transform: "skew(-.4deg, .5deg)"
-
 }
 const pStyle = {
-    // border: "1px solid #ffffffff",
-    // marginLeft: '120px',
     textAlign: "center",
     overflowWrap: "normal",
-
 }
 const holeStyle = {
     boxShadow: "inset 1px 1px 5px black",
@@ -52,7 +44,6 @@ const holeStyle = {
 }
 const marginStyle = {
     width: "40px", 
-    // backgroundColor: "blue", 
     display: "flex",
     flexDirection: "column", 
     border: "1px solid #00000033",

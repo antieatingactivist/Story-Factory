@@ -14,14 +14,9 @@ const buttonStyle = {
 
 export default function CreateButton() {
    
-
-
     return (
         <div style={divStyle}>
-
             <button style={buttonStyle}>Contribute to a Story!</button>
-        
-      
         </div>
     );
   }

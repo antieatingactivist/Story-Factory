@@ -6,21 +6,16 @@ const navStyle = {
     paddingTop: "10px",
     display: "flex",
     justifyContent: "flex-end", 
-    // backgroundColor: "#222222",
     fontSize: "1rem",
-    width: "100%",
-       
+    width: "100%",      
 }
 
 const aStyle = {
     padding: "10px",
 }
 
-
-
 export default function Nav() {
     const globalState = useContext(GlobalContext);
-
 
     return (
         <nav style={navStyle}>

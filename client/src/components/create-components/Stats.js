@@ -1,6 +1,6 @@
 
 const sectionStyle = {
- 
+ //
 }
 
 export default function Stats({numContributions}) {
@@ -8,7 +8,6 @@ export default function Stats({numContributions}) {
         <section style={sectionStyle}>
 
             There have been [{numContributions}] contributions, leaving [{10-numContributions}] more to go.
-         
         
         </section>
     );

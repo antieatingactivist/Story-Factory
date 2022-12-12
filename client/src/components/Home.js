@@ -26,7 +26,6 @@ const textColors = [
 const homeStyle = {
 
  width: '80%',
-//  backgroundColor: '#222222',
  marginLeft: '10%',
  marginTop: '3%',
 }
@@ -54,11 +53,9 @@ const buttonStyle = {
 
 export default function Home() {
     const [createStart, setCreateStart] = useState(false);
-    // user result 96
     const [userResult, setUserResult] = useState(0);
     const [userSnippets, setUserSnippets] = useState(null);
    
-    // console.log(createStart)
     const returnUser = async () => {
         
         try {
@@ -74,9 +71,6 @@ export default function Home() {
 
             const result = await response.json();
 
-            // console.log("console log of result: ", result);
-
-            //hands off response 116
             setUserResult(result);
         } catch (error){
             console.error(error);
@@ -84,19 +78,14 @@ export default function Home() {
     }
     const getUserSnippets = async () => {
         try {
-            const response = await getSnippetByUserName(userResult.username);
-            
-            
+            const response = await getSnippetByUserName(userResult.username);       
             const result = await response.json();
-            // console.log(result);
             setUserSnippets(result);
         } catch (error){
             console.error(error);
         }
     }
 
-    //calls return user function 122
-    // returnUser();
     useEffect(()=>{
 
         returnUser();
@@ -107,10 +96,6 @@ export default function Home() {
         getUserSnippets();
 
     }, [userResult] )
-
-
-
-    // console.log("xxx", userSnippets);
 
     
     return (

@@ -10,11 +10,7 @@ export default function TextField() {
         // Getting the value and name of the input which triggered the change
         e.preventDefault();
         const { value } = e.target;
-        console.log(value);
         textFieldContents.setTextFieldContents(value);
-
-        // return setTextField(value)
-    
     };
 
     const textareaStyle = {
@@ -32,19 +28,11 @@ export default function TextField() {
     return (
         
         <section>
-         
-
-        
+    
             <form>
                 <textarea onChange={handleInputChange} style={textareaStyle} name="textBox" defaultValue={textFieldContents.textFieldContents}></textarea>
 
             </form>
-
-    
-     
-            
-            
-
 
         </section>
     );

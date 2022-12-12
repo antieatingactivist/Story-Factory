@@ -17,11 +17,7 @@ export const CreateContext = createContext();
 
 
 const createStyle = {
-
-//  width: '80%',
-//  backgroundColor: '#222222',
-//  marginLeft: '10%',
-//  marginTop: '3%',
+    //
 }
 
 const divStyle = {
@@ -62,7 +58,6 @@ export default function Create({user}) {
     const [currentStory, setCurrentStory] = useState(0);
     const [finshedStory, showFinshedStory] = useState(false);
    
-    console.log(textFieldContents);
     const getRandomStory = async () => {
         
         try {
@@ -105,8 +100,7 @@ export default function Create({user}) {
 	        "username": user,
             "storyname" : currentStory.storyname
         }).then(result => {
-            //  (console.log(result));
-            //  homeState.setCreateStart(false);
+
             showFinshedStory(true);
              
         });
@@ -130,8 +124,6 @@ export default function Create({user}) {
  
     const wordCountDifference = textFieldContents.trim().split(/\s+/).length - timedWordTotal;
 
-
-    console.log(currentStory)
     return (
         <CreateContext.Provider value={ {textFieldContents, setTextFieldContents} }>
         {!finshedStory ?

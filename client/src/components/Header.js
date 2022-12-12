@@ -9,13 +9,11 @@ const headerStyle = {
     paddingTop: "10px",
     display: "flex",
     width: "100%",
-    // fontFamily: "Typewriter",
 }
 const titleStyle = {
         
     fontSize: "2.5em",
     paddingLeft: "30px",
-    // backgroundColor: "#000000",
     whiteSpace: "nowrap"
         
 }
