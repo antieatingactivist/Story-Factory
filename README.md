@@ -2,6 +2,8 @@
 
 Do you enjoy writing and playing time attack games? Then welcome to Story-Factory, a writing game with a time attack game that lets you build stories with friends or strangers! Start a new story or find someone elses, get a brief few moments to read what has been written before then start typing. you get a set amount of time before your time runs out so type as fast as you can.
 
+Original respository at https://github.com/MChambersIV/Story-Factory
+
 
 ## Built With
 
